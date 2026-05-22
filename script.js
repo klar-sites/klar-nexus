@@ -37,12 +37,12 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
   klarSdk
     .list(grid.dataset.pageType || "blog-post", { where, order: "updated_at:desc", limit: 10 })
     .then((items) => {
-      console.log('Items', items);
+      // console.log('Items', items);
       const info = document.getElementById("filter-info");
       // const total = JSON.parse(localStorage.getItem("all-posts") || "[]").length || (items ? items.length : 0);
       // console.log(window.posts);
       const total = window.posts.length || (items ? items.length : 0);
-      console.log('window.posts', window.posts);
+      // console.log('window.posts', window.posts);
       if (items && items.length) {
         klarSdk.insert("#all-posts", "replace", klarSdk.render(items, tpl));
       } else {
