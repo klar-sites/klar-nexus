@@ -7,7 +7,7 @@
 import { createKlarClient } from "https://editor.klar.website/sdk/content-static.js";
 
 /* ---- Klar client ----------------------------------------------------- */
-let projectId = 404;
+let projectId = 421;
 function getProjectId() {
   const data = localStorage.getItem("klar") ? JSON.parse(localStorage.getItem("klar")) : {};
   return data.activeProjectId || projectId;
