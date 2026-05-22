@@ -195,7 +195,7 @@
       <article class="blog-card">
         <a class="block" href="blog/blog-post-6.html" aria-label="Read article">
           <div class="blog-card__media">
-            <img src="/images/work-lifestyle-Bg_wzXQT.jpg" alt="" width="387" height="291" loading="lazy">
+            <img src="/images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy">
           </div>
           <div class="blog-card__body">
             <div class="flex items-center gap-2">
@@ -270,13 +270,13 @@
       <article class="blog-card">
         <a class="block" href="blog/blog-post-1.html" aria-label="Read article">
           <div class="blog-card__media">
-            <img src="/images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy">
+            <img src="/images/work-lifestyle-Bg_wzXQT.jpg" alt="" width="387" height="291" loading="lazy">
           </div>
           <div class="blog-card__body">
             <div class="flex items-center gap-2">
               <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
             </div>
-            <h3 class="blog-card__title">En blogg för alla de som älskar att skriva och skratta 1</h3>
+            <h3 class="blog-card__title">En blogg för alla de som älskar att skriva och skratta</h3>
             <p class="blog-card__excerpt"></p>
           </div>
         </a>
@@ -300,21 +300,21 @@
 
         <!-- klar:strip-start -->
         <script type="module">
-          /*
+          
           const allPostsTpl = document.getElementById('all-posts-tpl').innerHTML;
           if (window.klarSdk) {
-            window.posts = klarSdk.list('blog-post', {
+            klarSdk.list('blog-post', {
               where: {},
               order: 'updated_at:desc',
               limit: 10
-            });
-            window.posts.then(items => {
-              if (items && items.length) klarSdk.insert('#all-posts', 'replace', klarSdk.render(items,
-                allPostsTpl));
-              localStorage.setItem('all-posts', JSON.stringify(items || []));
+            }).then(items => {
+              window.posts = items;
+              // if (items && items.length) klarSdk.insert('#all-posts', 'replace', klarSdk.render(items,
+              //   allPostsTpl));
+              // localStorage.setItem('all-posts', JSON.stringify(items || []));
             });
           }
-          */
+          
         </script>
         <!-- klar:strip-end -->
       </main>
