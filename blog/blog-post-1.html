@@ -29,12 +29,12 @@
   </head>
   <body>
     <template data-for="related-articles" data-query="list('blog-post', {order: 'updated_at:desc', limit: 10})">
-  {% assign matched = 0 %}
-  {% for post in items %}
-    {% if matched &lt; 3
+      {% assign matched = 0 %}
+      {% for post in items %}
+      {% if matched &lt; 3
           and post.filePath != page.filePath
           and post.content.category == page.content.category %}
-       <article class="blog-card">
+      <article class="blog-card">
         <a class="block" href="{{post.url}}">
           <div class="blog-card__media">
             <img src="{{post.content.image.src}}" alt="" width="387" height="291" loading="lazy">
@@ -54,10 +54,10 @@
         </a>
       </article>
       {% assign matched = matched | plus: 1 %}
-    {% endif %}
-  {% endfor %}
-</template>
-    
+      {% endif %}
+      {% endfor %}
+    </template>
+
 
     <div class="min-h-screen bg-background">
       <!-- ===== Header ===== -->
@@ -363,18 +363,20 @@
             <section class="mt-12 lg:mt-16">
               <h3 class="section-title mb-8">Related Articles</h3>
               <div class="grid md:grid-cols-3 gap-8" id="related-articles">
-  
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-       <article class="blog-card">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <article class="blog-card">
         <a class="block" href="/blog/blog-post-2.html">
           <div class="blog-card__media">
             <img src="/images/fashion-lifestyle-tBv1CS6f (1).jpg" alt="" width="387" height="291" loading="lazy">
@@ -394,32 +396,9 @@
         </a>
       </article>
       
-    
-  
-    
-       <article class="blog-card">
-        <a class="block" href="/blog/blog-post-1.html">
-          <div class="blog-card__media">
-            <img src="/images/work-lifestyle-Bg_wzXQT.jpg" alt="" width="387" height="291" loading="lazy">
-          </div>
-          <div class="blog-card__body">
-            <div class="flex items-center gap-2">
-              <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">8 min read</span>
-            </div>
-            <h4 class="blog-card__title">
-              En blogg för alla de som älskar att skriva och skratta
-            </h4>
-            <time class="blog-meta" datetime="2023-09-12">May 5, 2026</time>
-            <p class="blog-card__excerpt">
-              Content preview — Description of the article topic and main points.
-            </p>
-          </div>
-        </a>
-      </article>
       
-    
-  
-</div>
+      
+    </div>
             </section>
           </div>
 
