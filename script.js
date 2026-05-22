@@ -39,10 +39,12 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
     .then((items) => {
       const info = document.getElementById("filter-info");
       // const total = JSON.parse(localStorage.getItem("all-posts") || "[]").length || (items ? items.length : 0);
-      console.log(window.posts);
+      // console.log(window.posts);
       const total = window.posts.length || (items ? items.length : 0);
       if (items && items.length) {
         klarSdk.insert("#all-posts", "replace", klarSdk.render(items, tpl));
+      } else {
+        klarSdk.insert("#all-posts", "replace", klarSdk.render(window.posts, tpl));
       }
       // Update only the COUNT TEXT here. Visibility of the info line and the
       // Clear Filters button is owned by the synchronous filter logic in
