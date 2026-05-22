@@ -38,7 +38,8 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
     .list(grid.dataset.pageType || "blog-post", { where, order: "updated_at:desc", limit: 10 })
     .then((items) => {
       const info = document.getElementById("filter-info");
-      const total = JSON.parse(localStorage.getItem("all-posts") || "[]").length || (items ? items.length : 0);
+      // const total = JSON.parse(localStorage.getItem("all-posts") || "[]").length || (items ? items.length : 0);
+      const total = window.posts.length || (items ? items.length : 0);
       if (items && items.length) {
         klarSdk.insert("#all-posts", "replace", klarSdk.render(items, tpl));
       }
