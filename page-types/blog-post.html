@@ -26,28 +26,28 @@
     <script type="module" src="/script.js"></script>
   </head>
   <body>
-    <template data-for="related-articles" data-query="list('blog-post', {order: 'updated_at:desc', limit: 10})">
+    <template data-for="related-articles" data-query="list('blog-post', {order: 'updated_at:desc', limit: 3})">
       {% for post in items %}
       <article class="blog-card">
-          <a class="block" href="/blog/blog-post-2.html">
-            <div class="blog-card__media">
-              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
+        <a class="block" href="{{post.url}}">
+          <div class="blog-card__media">
+            <img src="{{post.content.image}}" alt="" width="387" height="291" loading="lazy">
+          </div>
+          <div class="blog-card__body">
+            <div class="flex items-center gap-2">
+              <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
             </div>
-            <div class="blog-card__body">
-              <div class="flex items-center gap-2">
-                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
-              </div>
-              <h4 class="blog-card__title">
-                Self-Driving Cars: Everything You Need to Know
-              </h4>
-              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
-              <p class="blog-card__excerpt">
-                The automotive industry is experiencing a revolutionary
-                transformation with the advent of self-driving cars.
-              </p>
-            </div>
-          </a>
-        </article>
+            <h4 class="blog-card__title">
+              Self-Driving Cars: Everything You Need to Know
+            </h4>
+            <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
+            <p class="blog-card__excerpt">
+              The automotive industry is experiencing a revolutionary
+              transformation with the advent of self-driving cars.
+            </p>
+          </div>
+        </a>
+      </article>
       {% endfor %}
     </template>
     <div class="min-h-screen bg-background">
@@ -362,130 +362,67 @@
               <div class="grid md:grid-cols-3 gap-8" id="related-articles">
       
       <article class="blog-card">
-          <a class="block" href="/blog/blog-post-2.html">
-            <div class="blog-card__media">
-              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
+        <a class="block" href="/blog/blog-post-1.html">
+          <div class="blog-card__media">
+            <img src="[object Object]" alt="" width="387" height="291" loading="lazy">
+          </div>
+          <div class="blog-card__body">
+            <div class="flex items-center gap-2">
+              <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
             </div>
-            <div class="blog-card__body">
-              <div class="flex items-center gap-2">
-                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
-              </div>
-              <h4 class="blog-card__title">
-                Self-Driving Cars: Everything You Need to Know
-              </h4>
-              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
-              <p class="blog-card__excerpt">
-                The automotive industry is experiencing a revolutionary
-                transformation with the advent of self-driving cars.
-              </p>
-            </div>
-          </a>
-        </article>
+            <h4 class="blog-card__title">
+              Self-Driving Cars: Everything You Need to Know
+            </h4>
+            <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
+            <p class="blog-card__excerpt">
+              The automotive industry is experiencing a revolutionary
+              transformation with the advent of self-driving cars.
+            </p>
+          </div>
+        </a>
+      </article>
       
       <article class="blog-card">
-          <a class="block" href="/blog/blog-post-2.html">
-            <div class="blog-card__media">
-              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
+        <a class="block" href="/blog/blog-post-6.html">
+          <div class="blog-card__media">
+            <img src="[object Object]" alt="" width="387" height="291" loading="lazy">
+          </div>
+          <div class="blog-card__body">
+            <div class="flex items-center gap-2">
+              <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
             </div>
-            <div class="blog-card__body">
-              <div class="flex items-center gap-2">
-                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
-              </div>
-              <h4 class="blog-card__title">
-                Self-Driving Cars: Everything You Need to Know
-              </h4>
-              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
-              <p class="blog-card__excerpt">
-                The automotive industry is experiencing a revolutionary
-                transformation with the advent of self-driving cars.
-              </p>
-            </div>
-          </a>
-        </article>
+            <h4 class="blog-card__title">
+              Self-Driving Cars: Everything You Need to Know
+            </h4>
+            <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
+            <p class="blog-card__excerpt">
+              The automotive industry is experiencing a revolutionary
+              transformation with the advent of self-driving cars.
+            </p>
+          </div>
+        </a>
+      </article>
       
       <article class="blog-card">
-          <a class="block" href="/blog/blog-post-2.html">
-            <div class="blog-card__media">
-              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
+        <a class="block" href="/blog/blog-post-5.html">
+          <div class="blog-card__media">
+            <img src="[object Object]" alt="" width="387" height="291" loading="lazy">
+          </div>
+          <div class="blog-card__body">
+            <div class="flex items-center gap-2">
+              <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
             </div>
-            <div class="blog-card__body">
-              <div class="flex items-center gap-2">
-                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
-              </div>
-              <h4 class="blog-card__title">
-                Self-Driving Cars: Everything You Need to Know
-              </h4>
-              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
-              <p class="blog-card__excerpt">
-                The automotive industry is experiencing a revolutionary
-                transformation with the advent of self-driving cars.
-              </p>
-            </div>
-          </a>
-        </article>
-      
-      <article class="blog-card">
-          <a class="block" href="/blog/blog-post-2.html">
-            <div class="blog-card__media">
-              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
-            </div>
-            <div class="blog-card__body">
-              <div class="flex items-center gap-2">
-                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
-              </div>
-              <h4 class="blog-card__title">
-                Self-Driving Cars: Everything You Need to Know
-              </h4>
-              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
-              <p class="blog-card__excerpt">
-                The automotive industry is experiencing a revolutionary
-                transformation with the advent of self-driving cars.
-              </p>
-            </div>
-          </a>
-        </article>
-      
-      <article class="blog-card">
-          <a class="block" href="/blog/blog-post-2.html">
-            <div class="blog-card__media">
-              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
-            </div>
-            <div class="blog-card__body">
-              <div class="flex items-center gap-2">
-                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
-              </div>
-              <h4 class="blog-card__title">
-                Self-Driving Cars: Everything You Need to Know
-              </h4>
-              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
-              <p class="blog-card__excerpt">
-                The automotive industry is experiencing a revolutionary
-                transformation with the advent of self-driving cars.
-              </p>
-            </div>
-          </a>
-        </article>
-      
-      <article class="blog-card">
-          <a class="block" href="/blog/blog-post-2.html">
-            <div class="blog-card__media">
-              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
-            </div>
-            <div class="blog-card__body">
-              <div class="flex items-center gap-2">
-                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
-              </div>
-              <h4 class="blog-card__title">
-                Self-Driving Cars: Everything You Need to Know
-              </h4>
-              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
-              <p class="blog-card__excerpt">
-                The automotive industry is experiencing a revolutionary
-                transformation with the advent of self-driving cars.
-              </p>
-            </div>
-          </a>
-        </article>
+            <h4 class="blog-card__title">
+              Self-Driving Cars: Everything You Need to Know
+            </h4>
+            <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
+            <p class="blog-card__excerpt">
+              The automotive industry is experiencing a revolutionary
+              transformation with the advent of self-driving cars.
+            </p>
+          </div>
+        </a>
+      </article>
       
     </div>
             </section>
@@ -571,5 +508,6 @@
         </div>
       </footer>
     </div>
+
   
 </body></html>
