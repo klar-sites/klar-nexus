@@ -270,25 +270,6 @@
     </style>
   </head>
   <body>
-    <template data-for="related-posts" data-query="list('blog-post', {order: 'updated_at:desc', limit: 10})">
-      {% for post in items %}
-      <article class="blog-card">
-        <a class="block" href="{{ post.filePath }}" aria-label="Read article">
-          <div class="blog-card__media">
-            <img src="{{ post.image.src }}" alt="" width="387" height="291" loading="lazy">
-          </div>
-          <div class="blog-card__body">
-            <div class="flex items-center gap-2">
-              <span class="blog-meta">{{ post.category }}</span><span class="text-muted-foreground text-xs"
-                aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
-            </div>
-            <h3 class="blog-card__title">{{ post.title }}</h3>
-            <p class="blog-card__excerpt">{{ post.lead }}</p>
-          </div>
-        </a>
-      </article>
-      {% endfor %}
-    </template>
     <!-- ===== Sticky nav (built from the system's own components) ===== -->
     <header class="site-header">
       <div class="container">
