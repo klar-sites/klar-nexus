@@ -10,6 +10,7 @@
       .ds-page {
         padding-block: 3rem;
       }
+
       .ds-eyebrow {
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -17,6 +18,7 @@
         font-weight: 600;
         color: var(--muted-foreground);
       }
+
       /* ---- Showcase hero ---- */
       .ds-showcase-hero {
         position: relative;
@@ -26,6 +28,7 @@
         margin-bottom: 3rem;
         background: var(--background);
       }
+
       /* graph-paper grid, faded out toward the edges */
       .ds-showcase-hero::before {
         content: "";
@@ -34,55 +37,56 @@
         background-image: linear-gradient(var(--border) 1px, transparent 1px),
           linear-gradient(90deg, var(--border) 1px, transparent 1px);
         background-size: 48px 48px;
-        -webkit-mask-image: radial-gradient(
-          ellipse 75% 65% at 50% 0%,
-          #000 35%,
-          transparent 78%
-        );
-        mask-image: radial-gradient(
-          ellipse 75% 65% at 50% 0%,
-          #000 35%,
-          transparent 78%
-        );
+        -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 0%,
+            #000 35%,
+            transparent 78%);
+        mask-image: radial-gradient(ellipse 75% 65% at 50% 0%,
+            #000 35%,
+            transparent 78%);
         opacity: 0.6;
         pointer-events: none;
       }
+
       .ds-showcase-hero__inner {
         position: relative;
         max-width: 52rem;
       }
+
       .ds-showcase-hero__badge {
         gap: 0.5rem;
       }
+
       .ds-showcase-hero__badge .dot {
         width: 0.5rem;
         height: 0.5rem;
         border-radius: var(--radius-full);
         background: var(--foreground);
       }
+
       .ds-showcase-hero__title {
         font-size: clamp(2.75rem, 6vw, 4.5rem);
         line-height: 1.04;
         letter-spacing: var(--tracking-tight);
         margin: 1.5rem 0;
-        background: linear-gradient(
-          175deg,
-          var(--foreground) 30%,
-          var(--muted-foreground)
-        );
+        background: linear-gradient(175deg,
+            var(--foreground) 30%,
+            var(--muted-foreground));
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }
+
       .ds-showcase-hero__lead {
         max-width: 44ch;
       }
+
       .ds-showcase-hero__actions {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
         margin-top: 2.5rem;
       }
+
       .ds-showcase-hero__stats {
         display: flex;
         flex-wrap: wrap;
@@ -91,32 +95,39 @@
         padding-top: 2rem;
         border-top: 1px solid var(--border);
       }
-      .ds-showcase-hero__stats > div {
+
+      .ds-showcase-hero__stats>div {
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
       }
+
       .ds-showcase-hero__stats dt {
         font-size: var(--text-3xl);
         font-weight: var(--font-bold);
         line-height: 1;
       }
+
       .ds-showcase-hero__stats dd {
         font-size: var(--text-sm);
         color: var(--muted-foreground);
       }
+
       .ds-block {
         margin-bottom: 4rem;
       }
-      .ds-block > h2 {
+
+      .ds-block>h2 {
         font-size: var(--text-3xl);
         margin-bottom: 0.25rem;
       }
-      .ds-block > p.ds-note {
+
+      .ds-block>p.ds-note {
         color: var(--muted-foreground);
         margin-bottom: 1.5rem;
         max-width: 60ch;
       }
+
       .ds-subhead {
         font-size: var(--text-sm);
         font-weight: 600;
@@ -125,6 +136,7 @@
         color: var(--muted-foreground);
         margin: 2rem 0 1rem;
       }
+
       /* specimen canvas: layout for listing components */
       .ds-specimens {
         display: flex;
@@ -138,10 +150,12 @@
         background-image: radial-gradient(var(--border) 1px, transparent 1px);
         background-size: 16px 16px;
       }
+
       .ds-specimens--grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       }
+
       .ds-specimens--stack {
         flex-direction: column;
         align-items: stretch;
@@ -150,35 +164,43 @@
         padding: 0;
         border: 0;
       }
-      .ds-sections > * {
+
+      .ds-sections>* {
         border: 1px dashed var(--border);
         border-radius: var(--radius-lg);
       }
+
       /* token specimens */
       .ds-swatches {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 1rem;
       }
+
       .ds-swatch {
         border: 1px solid var(--border);
         border-radius: var(--radius-md);
         overflow: hidden;
         font-size: var(--text-xs);
       }
+
       .ds-swatch__chip {
         height: 72px;
       }
+
       .ds-swatch__meta {
         padding: 0.5rem 0.75rem;
       }
+
       .ds-swatch__name {
         font-weight: 600;
         display: block;
       }
+
       .ds-swatch__val {
         color: var(--muted-foreground);
       }
+
       .ds-type-row {
         display: flex;
         align-items: baseline;
@@ -186,34 +208,40 @@
         padding: 0.75rem 0;
         border-bottom: 1px solid var(--border);
       }
+
       .ds-type-row__label {
         width: 8rem;
         flex-shrink: 0;
         color: var(--muted-foreground);
         font-size: var(--text-sm);
       }
+
       .ds-scale {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
         align-items: flex-end;
       }
+
       .ds-scale__item {
         text-align: center;
         font-size: var(--text-xs);
         color: var(--muted-foreground);
       }
+
       .ds-scale__box {
         background: var(--foreground);
         border-radius: var(--radius-sm);
         margin-bottom: 0.5rem;
       }
+
       .ds-radius-row,
       .ds-shadow-row {
         display: flex;
         flex-wrap: wrap;
         gap: 1.5rem;
       }
+
       .ds-radius-box {
         width: 96px;
         height: 96px;
@@ -226,6 +254,7 @@
         font-size: var(--text-xs);
         color: var(--muted-foreground);
       }
+
       .ds-shadow-box {
         width: 140px;
         height: 96px;
@@ -241,15 +270,31 @@
     </style>
   </head>
   <body>
+    <template data-for="related-posts" data-query="list('blog-post', {order: 'updated_at:desc', limit: 10})">
+      {% for post in items %}
+      <article class="blog-card">
+        <a class="block" href="{{ post.filePath }}" aria-label="Read article">
+          <div class="blog-card__media">
+            <img src="{{ post.image.src }}" alt="" width="387" height="291" loading="lazy">
+          </div>
+          <div class="blog-card__body">
+            <div class="flex items-center gap-2">
+              <span class="blog-meta">{{ post.category }}</span><span class="text-muted-foreground text-xs"
+                aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
+            </div>
+            <h3 class="blog-card__title">{{ post.title }}</h3>
+            <p class="blog-card__excerpt">{{ post.lead }}</p>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </template>
     <!-- ===== Sticky nav (built from the system's own components) ===== -->
     <header class="site-header">
       <div class="container">
         <div class="site-header__bar">
           <a class="brand" href="#top">nexus</a>
-          <nav
-            class="nav-desktop items-center gap-8"
-            aria-label="Section navigation"
-          >
+          <nav class="nav-desktop items-center gap-8" aria-label="Section navigation">
             <a class="nav-link" href="#colors">Colors</a>
             <a class="nav-link" href="#typography">Typography</a>
             <a class="nav-link" href="#components">Components</a>
@@ -258,18 +303,8 @@
           <div class="flex items-center gap-2">
             <a href="#components" class="btn btn-primary btn-sm">Get started</a>
             <button class="btn btn-icon" aria-label="Toggle theme">
-              <svg
-                class="icon-sun"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+              <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="4"></circle>
                 <path d="M12 2v2"></path>
                 <path d="M12 20v2"></path>
@@ -280,18 +315,8 @@
                 <path d="m6.34 17.66-1.41 1.41"></path>
                 <path d="m19.07 4.93-1.41 1.41"></path>
               </svg>
-              <svg
-                class="icon-moon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+              <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
               </svg>
             </button>
@@ -356,70 +381,55 @@
           <div class="ds-swatch">
             <div class="ds-swatch__chip bg-background border-b"></div>
             <div class="ds-swatch__meta">
-              <span class="ds-swatch__name">background</span
-              ><span class="ds-swatch__val">#ffffff</span>
+              <span class="ds-swatch__name">background</span><span class="ds-swatch__val">#ffffff</span>
             </div>
           </div>
           <div class="ds-swatch">
             <div class="ds-swatch__chip bg-foreground"></div>
             <div class="ds-swatch__meta">
-              <span class="ds-swatch__name">foreground</span
-              ><span class="ds-swatch__val">#141414</span>
+              <span class="ds-swatch__name">foreground</span><span class="ds-swatch__val">#141414</span>
             </div>
           </div>
           <div class="ds-swatch">
             <div class="ds-swatch__chip bg-primary"></div>
             <div class="ds-swatch__meta">
-              <span class="ds-swatch__name">primary</span
-              ><span class="ds-swatch__val">#141414</span>
+              <span class="ds-swatch__name">primary</span><span class="ds-swatch__val">#141414</span>
             </div>
           </div>
           <div class="ds-swatch">
             <div class="ds-swatch__chip bg-secondary"></div>
             <div class="ds-swatch__meta">
-              <span class="ds-swatch__name">secondary</span
-              ><span class="ds-swatch__val">#f5f5f5</span>
+              <span class="ds-swatch__name">secondary</span><span class="ds-swatch__val">#f5f5f5</span>
             </div>
           </div>
           <div class="ds-swatch">
             <div class="ds-swatch__chip bg-muted"></div>
             <div class="ds-swatch__meta">
-              <span class="ds-swatch__name">muted</span
-              ><span class="ds-swatch__val">#f5f5f5</span>
+              <span class="ds-swatch__name">muted</span><span class="ds-swatch__val">#f5f5f5</span>
             </div>
           </div>
           <div class="ds-swatch">
             <div class="ds-swatch__chip bg-accent"></div>
             <div class="ds-swatch__meta">
-              <span class="ds-swatch__name">accent</span
-              ><span class="ds-swatch__val">#f0f0f0</span>
+              <span class="ds-swatch__name">accent</span><span class="ds-swatch__val">#f0f0f0</span>
             </div>
           </div>
           <div class="ds-swatch">
-            <div
-              class="ds-swatch__chip"
-              style="background: var(--muted-foreground)"
-            ></div>
+            <div class="ds-swatch__chip" style="background: var(--muted-foreground)"></div>
             <div class="ds-swatch__meta">
-              <span class="ds-swatch__name">muted-foreground</span
-              ><span class="ds-swatch__val">#737373</span>
+              <span class="ds-swatch__name">muted-foreground</span><span class="ds-swatch__val">#737373</span>
             </div>
           </div>
           <div class="ds-swatch">
             <div class="ds-swatch__chip bg-destructive"></div>
             <div class="ds-swatch__meta">
-              <span class="ds-swatch__name">destructive</span
-              ><span class="ds-swatch__val">#ef4444</span>
+              <span class="ds-swatch__name">destructive</span><span class="ds-swatch__val">#ef4444</span>
             </div>
           </div>
           <div class="ds-swatch">
-            <div
-              class="ds-swatch__chip"
-              style="background: var(--border)"
-            ></div>
+            <div class="ds-swatch__chip" style="background: var(--border)"></div>
             <div class="ds-swatch__meta">
-              <span class="ds-swatch__name">border</span
-              ><span class="ds-swatch__val">#e5e5e5</span>
+              <span class="ds-swatch__name">border</span><span class="ds-swatch__val">#e5e5e5</span>
             </div>
           </div>
         </div>
@@ -433,48 +443,39 @@
           utility (e.g. <code>.text-2xl</code>).
         </p>
         <div class="ds-type-row">
-          <span class="ds-type-row__label">text-5xl · 48</span
-          ><span class="text-5xl font-bold">Nexus</span>
+          <span class="ds-type-row__label">text-5xl · 48</span><span class="text-5xl font-bold">Nexus</span>
         </div>
         <div class="ds-type-row">
-          <span class="ds-type-row__label">text-4xl · 36</span
-          ><span class="text-4xl font-bold">The quick brown fox</span>
+          <span class="ds-type-row__label">text-4xl · 36</span><span class="text-4xl font-bold">The quick brown
+            fox</span>
         </div>
         <div class="ds-type-row">
-          <span class="ds-type-row__label">text-3xl · 30</span
-          ><span class="text-3xl font-bold">The quick brown fox</span>
+          <span class="ds-type-row__label">text-3xl · 30</span><span class="text-3xl font-bold">The quick brown
+            fox</span>
         </div>
         <div class="ds-type-row">
-          <span class="ds-type-row__label">text-2xl · 24</span
-          ><span class="text-2xl font-bold">The quick brown fox</span>
+          <span class="ds-type-row__label">text-2xl · 24</span><span class="text-2xl font-bold">The quick brown
+            fox</span>
         </div>
         <div class="ds-type-row">
-          <span class="ds-type-row__label">text-xl · 20</span
-          ><span class="text-xl font-semibold">The quick brown fox</span>
+          <span class="ds-type-row__label">text-xl · 20</span><span class="text-xl font-semibold">The quick brown
+            fox</span>
         </div>
         <div class="ds-type-row">
-          <span class="ds-type-row__label">text-lg · 18</span
-          ><span class="text-lg"
-            >The quick brown fox jumps over the lazy dog</span
-          >
+          <span class="ds-type-row__label">text-lg · 18</span><span class="text-lg">The quick brown fox jumps over the
+            lazy dog</span>
         </div>
         <div class="ds-type-row">
-          <span class="ds-type-row__label">text-base · 16</span
-          ><span class="text-base"
-            >The quick brown fox jumps over the lazy dog</span
-          >
+          <span class="ds-type-row__label">text-base · 16</span><span class="text-base">The quick brown fox jumps over
+            the lazy dog</span>
         </div>
         <div class="ds-type-row">
-          <span class="ds-type-row__label">text-sm · 14</span
-          ><span class="text-sm"
-            >The quick brown fox jumps over the lazy dog</span
-          >
+          <span class="ds-type-row__label">text-sm · 14</span><span class="text-sm">The quick brown fox jumps over the
+            lazy dog</span>
         </div>
         <div class="ds-type-row">
-          <span class="ds-type-row__label">text-xs · 12</span
-          ><span class="text-xs"
-            >The quick brown fox jumps over the lazy dog</span
-          >
+          <span class="ds-type-row__label">text-xs · 12</span><span class="text-xs">The quick brown fox jumps over the
+            lazy dog</span>
         </div>
         <h3 class="ds-subhead">Weights</h3>
         <div class="flex gap-6 flex-wrap">
@@ -494,24 +495,15 @@
         </p>
         <div class="ds-scale">
           <div class="ds-scale__item">
-            <div
-              class="ds-scale__box"
-              style="width: 0.25rem; height: 0.25rem"
-            ></div>
+            <div class="ds-scale__box" style="width: 0.25rem; height: 0.25rem"></div>
             1
           </div>
           <div class="ds-scale__item">
-            <div
-              class="ds-scale__box"
-              style="width: 0.5rem; height: 0.5rem"
-            ></div>
+            <div class="ds-scale__box" style="width: 0.5rem; height: 0.5rem"></div>
             2
           </div>
           <div class="ds-scale__item">
-            <div
-              class="ds-scale__box"
-              style="width: 0.75rem; height: 0.75rem"
-            ></div>
+            <div class="ds-scale__box" style="width: 0.75rem; height: 0.75rem"></div>
             3
           </div>
           <div class="ds-scale__item">
@@ -519,10 +511,7 @@
             4
           </div>
           <div class="ds-scale__item">
-            <div
-              class="ds-scale__box"
-              style="width: 1.5rem; height: 1.5rem"
-            ></div>
+            <div class="ds-scale__box" style="width: 1.5rem; height: 1.5rem"></div>
             6
           </div>
           <div class="ds-scale__item">
@@ -588,25 +577,14 @@
           <button class="btn btn-sm">Small</button>
           <button class="btn btn-lg">Large</button>
           <button class="btn btn-icon" aria-label="Search">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <path d="m21 21-4.3-4.3"></path>
             </svg>
           </button>
           <button class="btn" disabled>Disabled</button>
-          <a href="#" class="btn btn-primary" role="button"
-            >Read more <span aria-hidden="true">→</span></a
-          >
+          <a href="#" class="btn btn-primary" role="button">Read more <span aria-hidden="true">→</span></a>
         </div>
 
         <h3 class="ds-subhead">Badges</h3>
@@ -636,27 +614,14 @@
         </div>
 
         <h3 class="ds-subhead">Form controls</h3>
-        <div
-          class="ds-specimens ds-specimens--grid"
-          data-klar-ds-elements="Forms"
-        >
+        <div class="ds-specimens ds-specimens--grid" data-klar-ds-elements="Forms">
           <div class="field">
             <label class="label" for="ds-name">Name</label>
-            <input
-              class="input"
-              id="ds-name"
-              type="text"
-              placeholder="Your full name"
-            />
+            <input class="input" id="ds-name" type="text" placeholder="Your full name" />
           </div>
           <div class="field">
             <label class="label" for="ds-email">Email</label>
-            <input
-              class="input"
-              id="ds-email"
-              type="email"
-              placeholder="your.email@example.com"
-            />
+            <input class="input" id="ds-email" type="email" placeholder="your.email@example.com" />
           </div>
           <div class="field">
             <label class="label" for="ds-select">Category</label>
@@ -668,20 +633,12 @@
           </div>
           <div class="field" style="grid-column: 1 / -1">
             <label class="label" for="ds-msg">Message</label>
-            <textarea
-              class="textarea"
-              id="ds-msg"
-              rows="4"
-              placeholder="Tell us more…"
-            ></textarea>
+            <textarea class="textarea" id="ds-msg" rows="4" placeholder="Tell us more…"></textarea>
           </div>
         </div>
 
         <h3 class="ds-subhead">Cards</h3>
-        <div
-          class="ds-specimens ds-specimens--grid"
-          data-klar-ds-elements="Cards"
-        >
+        <div class="ds-specimens ds-specimens--grid" data-klar-ds-elements="Cards">
           <div class="card">
             <div class="card__header">
               <h3 class="card__title">Card title</h3>
@@ -703,17 +660,8 @@
           <div class="card">
             <div class="card__header">
               <h3 class="card__title">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                 </svg>
@@ -731,30 +679,17 @@
         </div>
 
         <h3 class="ds-subhead">Blog cards</h3>
-        <div
-          class="ds-specimens ds-specimens--grid"
-          data-klar-ds-elements="BlogCards"
-        >
+        <div class="ds-specimens ds-specimens--grid" data-klar-ds-elements="BlogCards">
           <article class="blog-card">
             <a href="#" class="block">
               <div class="blog-card__media">
-                <img
-                  src="../images/tech-post-HXCQgDvH.jpg"
-                  alt=""
-                  width="387"
-                  height="291"
-                  loading="lazy"
-                />
+                <img src="../images/tech-post-HXCQgDvH.jpg" alt="" width="387" height="291" loading="lazy" />
               </div>
               <div class="blog-card__body">
                 <div class="flex items-center gap-2">
                   <span class="blog-meta">Technology</span>
-                  <span class="text-muted-foreground text-xs" aria-hidden="true"
-                    >—</span
-                  >
-                  <time class="blog-meta" datetime="2026-05-10"
-                    >May 10, 2026</time
-                  >
+                  <span class="text-muted-foreground text-xs" aria-hidden="true">—</span>
+                  <time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
                 </div>
                 <h3 class="blog-card__title">
                   En blogg för alla de som älskar att skriva
@@ -768,23 +703,13 @@
           <article class="blog-card">
             <a href="#" class="block">
               <div class="blog-card__media">
-                <img
-                  src="../images/business-post-6IsrfXyD.jpg"
-                  alt=""
-                  width="387"
-                  height="291"
-                  loading="lazy"
-                />
+                <img src="../images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy" />
               </div>
               <div class="blog-card__body">
                 <div class="flex items-center gap-2">
                   <span class="blog-meta">Business</span>
-                  <span class="text-muted-foreground text-xs" aria-hidden="true"
-                    >—</span
-                  >
-                  <time class="blog-meta" datetime="2026-05-08"
-                    >May 8, 2026</time
-                  >
+                  <span class="text-muted-foreground text-xs" aria-hidden="true">—</span>
+                  <time class="blog-meta" datetime="2026-05-08">May 8, 2026</time>
                 </div>
                 <h3 class="blog-card__title">
                   Strategier för det moderna ledarskapet
@@ -810,19 +735,13 @@
           a self-contained root section.
         </p>
 
-        <div
-          class="ds-specimens ds-specimens--stack ds-sections"
-          data-klar-ds-elements="Sections"
-        >
+        <div class="ds-specimens ds-specimens--stack ds-sections" data-klar-ds-elements="Sections">
           <!-- Header -->
           <header class="site-header">
             <div class="container">
               <div class="site-header__bar">
                 <a class="brand" href="#">nexus</a>
-                <nav
-                  class="nav-desktop items-center gap-8"
-                  aria-label="Main navigation"
-                >
+                <nav class="nav-desktop items-center gap-8" aria-label="Main navigation">
                   <a class="nav-link" href="#">ALL POST</a>
                   <a class="nav-link" href="#">BUSINESS</a>
                   <a class="nav-link" href="#">TECHNOLOGY</a>
@@ -830,33 +749,15 @@
                 </nav>
                 <div class="nav-desktop items-center gap-2">
                   <a href="#" class="btn btn-icon" aria-label="Search">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <circle cx="11" cy="11" r="8"></circle>
                       <path d="m21 21-4.3-4.3"></path>
                     </svg>
                   </a>
                   <button class="btn btn-icon" aria-label="Toggle theme">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <circle cx="12" cy="12" r="4"></circle>
                       <path d="M12 2v2"></path>
                       <path d="M12 20v2"></path>
@@ -877,12 +778,7 @@
           <section class="container py-16">
             <div class="hero lg:grid-cols-2">
               <div class="hero__media">
-                <img
-                  src="../images/work-lifestyle-Bg_wzXQT.jpg"
-                  alt="Featured article"
-                  width="592"
-                  height="444"
-                />
+                <img src="../images/work-lifestyle-Bg_wzXQT.jpg" alt="Featured article" width="592" height="444" />
               </div>
               <div class="hero__content">
                 <h1 class="featured-title">
@@ -890,16 +786,10 @@
                 </h1>
                 <div class="flex items-center gap-4 text-sm">
                   <span class="blog-meta">Per Oscarsson / Writer</span>
-                  <span class="text-muted-foreground" aria-hidden="true"
-                    >—</span
-                  >
+                  <span class="text-muted-foreground" aria-hidden="true">—</span>
                   <span class="blog-meta">Lifestyle</span>
-                  <span class="text-muted-foreground" aria-hidden="true"
-                    >—</span
-                  >
-                  <time class="blog-meta" datetime="2026-05-02"
-                    >May 2, 2026</time
-                  >
+                  <span class="text-muted-foreground" aria-hidden="true">—</span>
+                  <time class="blog-meta" datetime="2026-05-02">May 2, 2026</time>
                 </div>
                 <p class="text-lg text-muted-foreground leading-relaxed">
                   Featured article description — this is where your main content
@@ -907,9 +797,7 @@
                   article.
                 </p>
                 <div class="pt-4">
-                  <a href="#" class="btn"
-                    >Read more <span aria-hidden="true">→</span></a
-                  >
+                  <a href="#" class="btn">Read more <span aria-hidden="true">→</span></a>
                 </div>
               </div>
             </div>
@@ -922,24 +810,12 @@
               <article class="blog-card">
                 <a href="#" class="block">
                   <div class="blog-card__media">
-                    <img
-                      src="../images/tech-post-HXCQgDvH.jpg"
-                      alt=""
-                      width="387"
-                      height="291"
-                      loading="lazy"
-                    />
+                    <img src="../images/tech-post-HXCQgDvH.jpg" alt="" width="387" height="291" loading="lazy" />
                   </div>
                   <div class="blog-card__body">
                     <div class="flex items-center gap-2">
-                      <span class="blog-meta">Technology</span
-                      ><span
-                        class="text-muted-foreground text-xs"
-                        aria-hidden="true"
-                        >—</span
-                      ><time class="blog-meta" datetime="2026-05-10"
-                        >May 10, 2026</time
-                      >
+                      <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs"
+                        aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
                     </div>
                     <h3 class="blog-card__title">
                       En blogg för alla de som tycker det är kul att blogga
@@ -953,24 +829,12 @@
               <article class="blog-card">
                 <a href="#" class="block">
                   <div class="blog-card__media">
-                    <img
-                      src="../images/business-post-6IsrfXyD.jpg"
-                      alt=""
-                      width="387"
-                      height="291"
-                      loading="lazy"
-                    />
+                    <img src="../images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy" />
                   </div>
                   <div class="blog-card__body">
                     <div class="flex items-center gap-2">
-                      <span class="blog-meta">Business</span
-                      ><span
-                        class="text-muted-foreground text-xs"
-                        aria-hidden="true"
-                        >—</span
-                      ><time class="blog-meta" datetime="2026-05-08"
-                        >May 8, 2026</time
-                      >
+                      <span class="blog-meta">Business</span><span class="text-muted-foreground text-xs"
+                        aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-08">May 8, 2026</time>
                     </div>
                     <h3 class="blog-card__title">
                       Strategier för det moderna ledarskapet
@@ -984,24 +848,12 @@
               <article class="blog-card">
                 <a href="#" class="block">
                   <div class="blog-card__media">
-                    <img
-                      src="../images/fashion-post-4m_ykv-I.jpg"
-                      alt=""
-                      width="387"
-                      height="291"
-                      loading="lazy"
-                    />
+                    <img src="../images/fashion-post-4m_ykv-I.jpg" alt="" width="387" height="291" loading="lazy" />
                   </div>
                   <div class="blog-card__body">
                     <div class="flex items-center gap-2">
-                      <span class="blog-meta">Lifestyle</span
-                      ><span
-                        class="text-muted-foreground text-xs"
-                        aria-hidden="true"
-                        >—</span
-                      ><time class="blog-meta" datetime="2026-05-06"
-                        >May 6, 2026</time
-                      >
+                      <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs"
+                        aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-06">May 6, 2026</time>
                     </div>
                     <h3 class="blog-card__title">
                       Stil och substans i vardagen
@@ -1030,24 +882,12 @@
                 <article class="blog-card">
                   <a href="#" class="block">
                     <div class="blog-card__media">
-                      <img
-                        src="../images/tech-post-HXCQgDvH.jpg"
-                        alt=""
-                        width="387"
-                        height="291"
-                        loading="lazy"
-                      />
+                      <img src="../images/tech-post-HXCQgDvH.jpg" alt="" width="387" height="291" loading="lazy" />
                     </div>
                     <div class="blog-card__body">
                       <div class="flex items-center gap-2">
-                        <span class="blog-meta">Technology</span
-                        ><span
-                          class="text-muted-foreground text-xs"
-                          aria-hidden="true"
-                          >—</span
-                        ><time class="blog-meta" datetime="2026-05-10"
-                          >May 10, 2026</time
-                        >
+                        <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs"
+                          aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
                       </div>
                       <h3 class="blog-card__title">
                         Self-driving cars: everything you need to know
@@ -1061,24 +901,12 @@
                 <article class="blog-card">
                   <a href="#" class="block">
                     <div class="blog-card__media">
-                      <img
-                        src="../images/business-post-6IsrfXyD.jpg"
-                        alt=""
-                        width="387"
-                        height="291"
-                        loading="lazy"
-                      />
+                      <img src="../images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy" />
                     </div>
                     <div class="blog-card__body">
                       <div class="flex items-center gap-2">
-                        <span class="blog-meta">Business</span
-                        ><span
-                          class="text-muted-foreground text-xs"
-                          aria-hidden="true"
-                          >—</span
-                        ><time class="blog-meta" datetime="2026-05-08"
-                          >May 8, 2026</time
-                        >
+                        <span class="blog-meta">Business</span><span class="text-muted-foreground text-xs"
+                          aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-08">May 8, 2026</time>
                       </div>
                       <h3 class="blog-card__title">
                         The importance of corporate social responsibility
@@ -1092,24 +920,12 @@
                 <article class="blog-card">
                   <a href="#" class="block">
                     <div class="blog-card__media">
-                      <img
-                        src="../images/fashion-post-4m_ykv-I.jpg"
-                        alt=""
-                        width="387"
-                        height="291"
-                        loading="lazy"
-                      />
+                      <img src="../images/fashion-post-4m_ykv-I.jpg" alt="" width="387" height="291" loading="lazy" />
                     </div>
                     <div class="blog-card__body">
                       <div class="flex items-center gap-2">
-                        <span class="blog-meta">Lifestyle</span
-                        ><span
-                          class="text-muted-foreground text-xs"
-                          aria-hidden="true"
-                          >—</span
-                        ><time class="blog-meta" datetime="2026-05-06"
-                          >May 6, 2026</time
-                        >
+                        <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs"
+                          aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-06">May 6, 2026</time>
                       </div>
                       <h3 class="blog-card__title">
                         Mindful living: finding balance in a busy world
@@ -1133,16 +949,9 @@
               <p class="text-lg mb-8" style="opacity: 0.85">
                 Get the latest articles delivered straight to your inbox.
               </p>
-              <form
-                class="flex flex-col sm:flex-row gap-4 justify-center"
-                style="max-width: 32rem; margin-inline: auto"
-              >
-                <input
-                  class="input"
-                  type="email"
-                  placeholder="your.email@example.com"
-                  aria-label="Email address"
-                />
+              <form class="flex flex-col sm:flex-row gap-4 justify-center"
+                style="max-width: 32rem; margin-inline: auto">
+                <input class="input" type="email" placeholder="your.email@example.com" aria-label="Email address" />
                 <button class="btn btn-secondary" type="submit">
                   Subscribe
                 </button>
@@ -1164,30 +973,16 @@
                 <div class="card__body">
                   <form class="flex flex-col gap-6">
                     <div class="field">
-                      <label class="label" for="s-name">Name</label
-                      ><input
-                        class="input"
-                        id="s-name"
-                        placeholder="Your full name"
-                      />
+                      <label class="label" for="s-name">Name</label><input class="input" id="s-name"
+                        placeholder="Your full name" />
                     </div>
                     <div class="field">
-                      <label class="label" for="s-email">Email</label
-                      ><input
-                        class="input"
-                        id="s-email"
-                        type="email"
-                        placeholder="your.email@example.com"
-                      />
+                      <label class="label" for="s-email">Email</label><input class="input" id="s-email" type="email"
+                        placeholder="your.email@example.com" />
                     </div>
                     <div class="field">
-                      <label class="label" for="s-message">Message</label
-                      ><textarea
-                        class="textarea"
-                        id="s-message"
-                        rows="5"
-                        placeholder="Tell us more…"
-                      ></textarea>
+                      <label class="label" for="s-message">Message</label><textarea class="textarea" id="s-message"
+                        rows="5" placeholder="Tell us more…"></textarea>
                     </div>
                     <button class="btn btn-primary btn-block" type="submit">
                       Send message
@@ -1278,8 +1073,8 @@
       // Theme toggle demo for any [aria-label="Toggle theme"] buttons
       document
         .querySelectorAll('[aria-label="Toggle theme"]')
-        .forEach(function (btn) {
-          btn.addEventListener("click", function () {
+        .forEach(function(btn) {
+          btn.addEventListener("click", function() {
             var root = document.documentElement;
             var dark = root.classList.toggle("dark");
             root.classList.toggle("light", !dark);
