@@ -130,7 +130,7 @@
             </button>
             <div class="filter__menu hidden" data-filter-menu="">
               <button class="filter__option is-selected" data-value="all">All Topics</button>
-              <div id="all-topics" data-klar-static><button class="filter__option" data-value="Personal Branding">Personal Branding <span class="text-muted-foreground">(1)</span></button></div>
+              <div id="all-topics" data-klar-static><button class="filter__option" data-value="Personal Branding">Personal Branding <span class="text-muted-foreground">(2)</span></button><button class="filter__option" data-value="Digital Marketing">Digital Marketing <span class="text-muted-foreground">(1)</span></button></div>
             </div>
             <!-- klar:strip-start -->
             <template id="all-topics-template"><button class="filter__option" data-value="${value}">${value} <span class="text-muted-foreground">(${count})</span></button></template>
@@ -157,7 +157,7 @@
             </button>
             <div class="filter__menu hidden" data-filter-menu="">
               <button class="filter__option is-selected" data-value="all">All Tags</button>
-              <div id="all-tags" data-klar-static><button class="filter__option" data-value="Leadership">Leadership <span class="text-muted-foreground">(3)</span></button><button class="filter__option" data-value="Authenticity">Authenticity <span class="text-muted-foreground">(1)</span></button></div>
+              <div id="all-tags" data-klar-static><button class="filter__option" data-value="Leadership">Leadership <span class="text-muted-foreground">(4)</span></button><button class="filter__option" data-value="Authenticity">Authenticity <span class="text-muted-foreground">(2)</span></button></div>
             </div>
             <!-- klar:strip-start -->
             <template id="all-tags-template"><button class="filter__option" data-value="${value}">${value} <span class="text-muted-foreground">(${count})</span></button></template>
@@ -261,7 +261,7 @@
           </article>
         </template>
 
-        <!-- klar:strip-start -->
+        
         <script type="module">
           const allPostsTpl = document.getElementById('all-posts-tpl').innerHTML;
           if (window.klarSdk) {
@@ -279,7 +279,7 @@
             });
           }
         </script>
-        <!-- klar:strip-end -->
+        
       </main>
 
       <!-- ===== Footer ===== -->
