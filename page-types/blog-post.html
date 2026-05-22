@@ -1,13 +1,10 @@
-<!doctype html>
-<html lang="en" class="light" style="color-scheme: light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
+<!DOCTYPE html><html lang="en" class="light" style="color-scheme: light"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
     <title>Nexus - Personal Blog | Fashion, Technology &amp; Lifestyle</title>
-    <meta name="description"
-      content="Explore the latest in fashion trends, technology insights, business strategies, and lifestyle inspiration on Nexus personal blog." />
-    <link rel="stylesheet" href="/style.css" />
+    <meta name="description" content="Explore the latest in fashion trends, technology insights, business strategies, and lifestyle inspiration on Nexus personal blog.">
+    <link rel="stylesheet" href="/style.css">
     <script>
       (function() {
         try {
@@ -29,23 +26,28 @@
     <script type="module" src="/script.js"></script>
   </head>
   <body>
-    <template data-for="related-posts" data-query="list('blog-post', {order: 'updated_at:desc', limit: 10})">
+    <template data-for="related-articles" data-query="list('blog-post', {order: 'updated_at:desc', limit: 10})">
       {% for post in items %}
       <article class="blog-card">
-        <a class="block" href="{{ post.filePath }}" aria-label="Read article">
-          <div class="blog-card__media">
-            <img src="{{ post.image.src }}" alt="" width="387" height="291" loading="lazy">
-          </div>
-          <div class="blog-card__body">
-            <div class="flex items-center gap-2">
-              <span class="blog-meta">{{ post.category }}</span><span class="text-muted-foreground text-xs"
-                aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
+          <a class="block" href="/blog/blog-post-2.html">
+            <div class="blog-card__media">
+              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
             </div>
-            <h3 class="blog-card__title">{{ post.title }}</h3>
-            <p class="blog-card__excerpt">{{ post.lead }}</p>
-          </div>
-        </a>
-      </article>
+            <div class="blog-card__body">
+              <div class="flex items-center gap-2">
+                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
+              </div>
+              <h4 class="blog-card__title">
+                Self-Driving Cars: Everything You Need to Know
+              </h4>
+              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
+              <p class="blog-card__excerpt">
+                The automotive industry is experiencing a revolutionary
+                transformation with the advent of self-driving cars.
+              </p>
+            </div>
+          </a>
+        </article>
       {% endfor %}
     </template>
     <div class="min-h-screen bg-background">
@@ -61,34 +63,24 @@
               <a class="nav-link" href="/podcast.html">PODCAST</a>
             </nav>
             <div class="nav-desktop items-center gap-2">
-              <a href="#" class="btn btn-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                  height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
+              <a href="#" class="btn btn-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg></a>
-              <a href="#" class="btn btn-icon" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                  height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+              <a href="#" class="btn btn-icon" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
                   </path>
                 </svg></a>
-              <a href="#" class="btn btn-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                  height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
+              <a href="#" class="btn btn-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
                 </svg></a>
-              <a href="/search.html" class="btn btn-icon" aria-label="Search articles"><svg
-                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <a href="/search.html" class="btn btn-icon" aria-label="Search articles"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="11" cy="11" r="8"></circle>
                   <path d="m21 21-4.3-4.3"></path>
                 </svg></a>
               <button class="btn btn-icon" aria-label="Toggle theme">
-                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="4"></circle>
                   <path d="M12 2v2"></path>
                   <path d="M12 20v2"></path>
@@ -99,15 +91,13 @@
                   <path d="m6.34 17.66-1.41 1.41"></path>
                   <path d="m19.07 4.93-1.41 1.41"></path>
                 </svg>
-                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
                 </svg>
               </button>
             </div>
             <button id="mobile-menu-toggle" class="btn btn-icon nav-mobile-toggle" aria-label="Toggle menu">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="4" x2="20" y1="12" y2="12"></line>
                 <line x1="4" x2="20" y1="6" y2="6"></line>
                 <line x1="4" x2="20" y1="18" y2="18"></line>
@@ -152,8 +142,7 @@
                     </div>
                   </div>
                   <button class="btn btn-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <circle cx="18" cy="5" r="3"></circle>
                       <circle cx="6" cy="12" r="3"></circle>
                       <circle cx="18" cy="19" r="3"></circle>
@@ -164,9 +153,7 @@
                   </button>
                 </div>
                 <div class="overflow-hidden rounded-lg aspect-photo mb-8">
-                  <img class="object-cover w-full h-full field-image" src="/images/work-lifestyle-Bg_wzXQT.jpg"
-                    alt="En blogg för alla de som tycker det är kul att blogga" width="800" height="600"
-                    fetchpriority="high" />
+                  <img class="object-cover w-full h-full field-image" src="/images/work-lifestyle-Bg_wzXQT.jpg" alt="En blogg för alla de som tycker det är kul att blogga" width="800" height="600" fetchpriority="high">
                 </div>
               </header>
 
@@ -196,7 +183,7 @@
                   fashionable. However, the rise of digital platforms has
                   fundamentally disrupted this hierarchy.
                 </p>
-                <img src="/images/fashion-post-4m_ykv-I.jpg" alt="Fashion blogger creating content" loading="lazy" />
+                <img src="/images/fashion-post-4m_ykv-I.jpg" alt="Fashion blogger creating content" loading="lazy">
                 <p>
                   Today's fashion influencers operate with unprecedented
                   autonomy, building direct relationships with their audiences
@@ -234,7 +221,7 @@
                     forecasting
                   </li>
                 </ul>
-                <img src="/images/hero-image-xUp6gwWA.jpg" alt="Multi-platform content creation setup" loading="lazy" />
+                <img src="/images/hero-image-xUp6gwWA.jpg" alt="Multi-platform content creation setup" loading="lazy">
 
                 <h2>The Business of Fashion Blogging</h2>
                 <p>
@@ -278,7 +265,7 @@
                   immediate shopping opportunities through features like
                   Instagram Shopping and "link in bio" tools.
                 </p>
-                <img src="/images/business-post-6IsrfXyD.jpg" alt="Consumer shopping on mobile device" loading="lazy" />
+                <img src="/images/business-post-6IsrfXyD.jpg" alt="Consumer shopping on mobile device" loading="lazy">
                 <p>
                   Research indicates that 72% of Gen Z and millennial consumers
                   have made fashion purchases directly influenced by social
@@ -373,71 +360,134 @@
             <section class="mt-12 lg:mt-16">
               <h3 class="section-title mb-8">Related Articles</h3>
               <div class="grid md:grid-cols-3 gap-8" id="related-articles">
-                <article class="blog-card">
-                  <a class="block" href="/blog/blog-post-2.html">
-                    <div class="blog-card__media">
-                      <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy" />
-                    </div>
-                    <div class="blog-card__body">
-                      <div class="flex items-center gap-2">
-                        <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs"
-                          aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
-                      </div>
-                      <h4 class="blog-card__title">
-                        Self-Driving Cars: Everything You Need to Know
-                      </h4>
-                      <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
-                      <p class="blog-card__excerpt">
-                        The automotive industry is experiencing a revolutionary
-                        transformation with the advent of self-driving cars.
-                      </p>
-                    </div>
-                  </a>
-                </article>
-                <article class="blog-card">
-                  <a class="block" href="/blog/blog-post-3.html">
-                    <div class="blog-card__media">
-                      <img src="/images/tech-post-HXCQgDvH.jpg" alt="" width="387" height="291" loading="lazy" />
-                    </div>
-                    <div class="blog-card__body">
-                      <div class="flex items-center gap-2">
-                        <span class="blog-meta">Business</span><span class="text-muted-foreground text-xs"
-                          aria-hidden="true">—</span><span class="blog-meta">6 min read</span>
-                      </div>
-                      <h4 class="blog-card__title">
-                        The Importance of Corporate Social Responsibility
-                      </h4>
-                      <time class="blog-meta" datetime="2023-09-10">Sep 10, 2023</time>
-                      <p class="blog-card__excerpt">
-                        Businesses are increasingly expected to operate with a
-                        sense of social responsibility that extends beyond
-                        profit maximization.
-                      </p>
-                    </div>
-                  </a>
-                </article>
-                <article class="blog-card">
-                  <a class="block" href="/blog/blog-post-5.html">
-                    <div class="blog-card__media">
-                      <img src="/images/work-lifestyle-Bg_wzXQT.jpg" alt="" width="387" height="291" loading="lazy" />
-                    </div>
-                    <div class="blog-card__body">
-                      <div class="flex items-center gap-2">
-                        <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs"
-                          aria-hidden="true">—</span><span class="blog-meta">4 min read</span>
-                      </div>
-                      <h4 class="blog-card__title">
-                        Mindful Living: Finding Balance in a Busy World
-                      </h4>
-                      <time class="blog-meta" datetime="2023-09-08">Sep 8, 2023</time>
-                      <p class="blog-card__excerpt">
-                        In our fast-paced world, finding moments of peace and
-                        balance has become more challenging than ever.
-                      </p>
-                    </div>
-                  </a>
-                </article>
+      
+      <article class="blog-card">
+          <a class="block" href="/blog/blog-post-2.html">
+            <div class="blog-card__media">
+              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="flex items-center gap-2">
+                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
               </div>
+              <h4 class="blog-card__title">
+                Self-Driving Cars: Everything You Need to Know
+              </h4>
+              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
+              <p class="blog-card__excerpt">
+                The automotive industry is experiencing a revolutionary
+                transformation with the advent of self-driving cars.
+              </p>
+            </div>
+          </a>
+        </article>
+      
+      <article class="blog-card">
+          <a class="block" href="/blog/blog-post-2.html">
+            <div class="blog-card__media">
+              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="flex items-center gap-2">
+                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
+              </div>
+              <h4 class="blog-card__title">
+                Self-Driving Cars: Everything You Need to Know
+              </h4>
+              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
+              <p class="blog-card__excerpt">
+                The automotive industry is experiencing a revolutionary
+                transformation with the advent of self-driving cars.
+              </p>
+            </div>
+          </a>
+        </article>
+      
+      <article class="blog-card">
+          <a class="block" href="/blog/blog-post-2.html">
+            <div class="blog-card__media">
+              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="flex items-center gap-2">
+                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
+              </div>
+              <h4 class="blog-card__title">
+                Self-Driving Cars: Everything You Need to Know
+              </h4>
+              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
+              <p class="blog-card__excerpt">
+                The automotive industry is experiencing a revolutionary
+                transformation with the advent of self-driving cars.
+              </p>
+            </div>
+          </a>
+        </article>
+      
+      <article class="blog-card">
+          <a class="block" href="/blog/blog-post-2.html">
+            <div class="blog-card__media">
+              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="flex items-center gap-2">
+                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
+              </div>
+              <h4 class="blog-card__title">
+                Self-Driving Cars: Everything You Need to Know
+              </h4>
+              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
+              <p class="blog-card__excerpt">
+                The automotive industry is experiencing a revolutionary
+                transformation with the advent of self-driving cars.
+              </p>
+            </div>
+          </a>
+        </article>
+      
+      <article class="blog-card">
+          <a class="block" href="/blog/blog-post-2.html">
+            <div class="blog-card__media">
+              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="flex items-center gap-2">
+                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
+              </div>
+              <h4 class="blog-card__title">
+                Self-Driving Cars: Everything You Need to Know
+              </h4>
+              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
+              <p class="blog-card__excerpt">
+                The automotive industry is experiencing a revolutionary
+                transformation with the advent of self-driving cars.
+              </p>
+            </div>
+          </a>
+        </article>
+      
+      <article class="blog-card">
+          <a class="block" href="/blog/blog-post-2.html">
+            <div class="blog-card__media">
+              <img src="/images/lifestyle-post-B2o5gHGK.jpg" alt="" width="387" height="291" loading="lazy">
+            </div>
+            <div class="blog-card__body">
+              <div class="flex items-center gap-2">
+                <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">7 min read</span>
+              </div>
+              <h4 class="blog-card__title">
+                Self-Driving Cars: Everything You Need to Know
+              </h4>
+              <time class="blog-meta" datetime="2023-09-12">Sep 12, 2023</time>
+              <p class="blog-card__excerpt">
+                The automotive industry is experiencing a revolutionary
+                transformation with the advent of self-driving cars.
+              </p>
+            </div>
+          </a>
+        </article>
+      
+    </div>
             </section>
           </div>
 
@@ -446,8 +496,7 @@
             <div class="toc card">
               <div class="card__header">
                 <h3 class="card__title" style="font-size: var(--text-lg)">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="8" x2="21" y1="6" y2="6"></line>
                     <line x1="8" x2="21" y1="12" y2="12"></line>
                     <line x1="8" x2="21" y1="18" y2="18"></line>
@@ -467,8 +516,7 @@
       </main>
 
       <button id="back-to-top" class="back-to-top hidden" aria-label="Back to top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m18 15-6-6-6 6"></path>
         </svg>
       </button>
@@ -523,5 +571,5 @@
         </div>
       </footer>
     </div>
-  </body>
-</html>
+  
+</body></html>
