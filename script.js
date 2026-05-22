@@ -236,8 +236,8 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
     }
   }
   // TOC runs after the SDK may have replaced the article body
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => setTimeout(setupToc, 200));
-  else setTimeout(setupToc, 200);
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => setTimeout(setupToc, 0));
+  else setTimeout(setupToc, 0);
 
   /* ---- Back to top --------------------------------------------------- */
   const backToTop = document.getElementById("back-to-top");
