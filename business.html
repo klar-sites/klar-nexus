@@ -139,7 +139,7 @@
                   categories: 'Business'
                 }
               }).then(f => {
-                console.log(f);
+                // console.log(f);
                 klarSdk.insert('#all-topics',
                   'replace', klarSdk.render(f, t))
               });
@@ -246,7 +246,6 @@
 
         <!-- klar:strip-start -->
         <script type="module">
-          
           const allPostsTpl = document.getElementById('all-posts-tpl').innerHTML;
           if (window.klarSdk) {
             klarSdk.list('blog-post', {
@@ -262,7 +261,6 @@
               // localStorage.setItem('all-posts', JSON.stringify(items || []));
             });
           }
-          
         </script>
         <!-- klar:strip-end -->
       </main>
