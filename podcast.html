@@ -148,13 +148,13 @@
             </button>
             <div class="filter__menu hidden" data-filter-menu="">
               <button class="filter__option is-selected" data-value="all">All Tags</button>
-              <div id="all-tags" data-klar-static><button class="filter__option" data-value="Leadership">Leadership <span class="text-muted-foreground">(5)</span></button><button class="filter__option" data-value="Authenticity">Authenticity <span class="text-muted-foreground">(4)</span></button></div>
+              <div id="all-tags" data-klar-static><button class="filter__option" data-value="Leadership">Leadership <span class="text-muted-foreground">(2)</span></button><button class="filter__option" data-value="Authenticity">Authenticity <span class="text-muted-foreground">(1)</span></button></div>
             </div>
             <!-- klar:strip-start -->
             <template id="all-tags-template"><button class="filter__option" data-value="${value}">${value} <span class="text-muted-foreground">(${count})</span></button></template>
             <script type="module">
               const t = document.getElementById('all-tags-template').innerHTML;
-              if (window.klarSdk) klarSdk.facets('blog-post', 'tags').then(f => klarSdk.insert('#all-tags', 'replace',
+              if (window.klarSdk) klarSdk.facets('blog-post', 'tags', {where: { categories: 'Podcast' }}).then(f => klarSdk.insert('#all-tags', 'replace',
                 klarSdk.render(f, t)));
             </script>
             <!-- klar:strip-end -->
@@ -190,13 +190,13 @@
       <article class="blog-card">
         <a class="block" href="blog/blog-post-1.html" aria-label="Read article">
           <div class="blog-card__media">
-            <img src="/images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy">
+            <img src="/images/work-lifestyle-Bg_wzXQT.jpg" alt="" width="387" height="291" loading="lazy">
           </div>
           <div class="blog-card__body">
             <div class="flex items-center gap-2">
               <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
             </div>
-            <h3 class="blog-card__title">En blogg för alla de som älskar att skriva och skratta 1</h3>
+            <h3 class="blog-card__title">En blogg för alla de som älskar att skriva och skratta</h3>
             <p class="blog-card__excerpt"></p>
           </div>
         </a>
