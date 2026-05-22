@@ -161,7 +161,11 @@
             <template id="all-tags-template"><button class="filter__option" data-value="${value}">${value} <span class="text-muted-foreground">(${count})</span></button></template>
             <script type="module">
               const t = document.getElementById('all-tags-template').innerHTML;
-              if (window.klarSdk) klarSdk.facets('blog-post', 'tags', {where: { categories: 'Business' }}).then(f => klarSdk.insert('#all-tags', 'replace',
+              if (window.klarSdk) klarSdk.facets('blog-post', 'tags', {
+                where: {
+                  categories: 'Business'
+                }
+              }).then(f => klarSdk.insert('#all-tags', 'replace',
                 klarSdk.render(f, t)));
             </script>
             <!-- klar:strip-end -->
@@ -242,23 +246,23 @@
 
         <!-- klar:strip-start -->
         <script type="module">
-          /*
+          
           const allPostsTpl = document.getElementById('all-posts-tpl').innerHTML;
           if (window.klarSdk) {
-            window.posts = klarSdk.list('blog-post', {
+            klarSdk.list('blog-post', {
               where: {
                 categories: 'Business'
               },
               order: 'updated_at:desc',
               limit: 10
-            });
-            window.posts.then(items => {
-              if (items && items.length) klarSdk.insert('#all-posts', 'replace', klarSdk.render(items,
-                allPostsTpl));
-              localStorage.setItem('all-posts', JSON.stringify(items || []));
+            }).then(items => {
+              window.posts = items;
+              // if (items && items.length) klarSdk.insert('#all-posts', 'replace', klarSdk.render(items,
+              //   allPostsTpl));
+              // localStorage.setItem('all-posts', JSON.stringify(items || []));
             });
           }
-          */
+          
         </script>
         <!-- klar:strip-end -->
       </main>
