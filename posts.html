@@ -130,7 +130,7 @@
             </button>
             <div class="filter__menu hidden" data-filter-menu="">
               <button class="filter__option is-selected" data-value="all">All Categories</button>
-              <div id="all-categories" data-klar-static><button class="filter__option" data-value="Lifestyle">Lifestyle <span class="text-muted-foreground">(5)</span></button><button class="filter__option" data-value="Technology">Technology <span class="text-muted-foreground">(5)</span></button><button class="filter__option" data-value="Business">Business <span class="text-muted-foreground">(3)</span></button><button class="filter__option" data-value="Podcast">Podcast <span class="text-muted-foreground">(2)</span></button></div>
+              <div id="all-categories" data-klar-static><button class="filter__option" data-value="Lifestyle">Lifestyle <span class="text-muted-foreground">(6)</span></button><button class="filter__option" data-value="Technology">Technology <span class="text-muted-foreground">(5)</span></button><button class="filter__option" data-value="Business">Business <span class="text-muted-foreground">(4)</span></button><button class="filter__option" data-value="Podcast">Podcast <span class="text-muted-foreground">(3)</span></button></div>
             </div>
             <!-- klar:strip-start -->
             <template id="all-categories-template"><button class="filter__option" data-value="${value}">${value} <span class="text-muted-foreground">(${count})</span></button></template>
@@ -300,9 +300,8 @@
           </article>
         </template>
 
-        <!-- klar:strip-start -->
+        
         <script type="module">
-          
           const allPostsTpl = document.getElementById('all-posts-tpl').innerHTML;
           if (window.klarSdk) {
             klarSdk.list('blog-post', {
@@ -316,9 +315,8 @@
               // localStorage.setItem('all-posts', JSON.stringify(items || []));
             });
           }
-          
         </script>
-        <!-- klar:strip-end -->
+        
       </main>
 
       <!-- ===== Footer ===== -->
