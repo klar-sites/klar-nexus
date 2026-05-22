@@ -1072,6 +1072,8 @@ ul, ol {
   .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .lg\:col-span-1 { grid-column: span 1 / span 1; }
   .lg\:col-span-2 { grid-column: span 2 / span 2; }
+  .lg\:gap-12 { gap: var(--space-12); }
+  .lg\:mt-16 { margin-top: var(--space-16); }
 }
 
 /* Header nav shows on large screens only (matches source behaviour) */
