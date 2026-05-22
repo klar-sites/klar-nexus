@@ -269,9 +269,8 @@
           </article>
         </template>
 
-        <!-- klar:strip-start -->
+        
         <script type="module">
-          
           const allPostsTpl = document.getElementById('all-posts-tpl').innerHTML;
           if (window.klarSdk) {
             klarSdk.list('blog-post', {
@@ -287,9 +286,8 @@
               // localStorage.setItem('all-posts', JSON.stringify(items || []));
             });
           }
-          
         </script>
-        <!-- klar:strip-end -->
+        
       </main>
 
       <!-- ===== Footer ===== -->
