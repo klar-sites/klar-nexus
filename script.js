@@ -37,6 +37,7 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
   klarSdk
     .list(grid.dataset.pageType || "blog-post", { where, order: "updated_at:desc", limit: 10 })
     .then((items) => {
+      console.log('Items', items);
       const info = document.getElementById("filter-info");
       // const total = JSON.parse(localStorage.getItem("all-posts") || "[]").length || (items ? items.length : 0);
       // console.log(window.posts);
