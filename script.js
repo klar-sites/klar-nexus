@@ -39,6 +39,7 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
     .then((items) => {
       const info = document.getElementById("filter-info");
       // const total = JSON.parse(localStorage.getItem("all-posts") || "[]").length || (items ? items.length : 0);
+      console.log(window.posts);
       const total = window.posts.length || (items ? items.length : 0);
       if (items && items.length) {
         klarSdk.insert("#all-posts", "replace", klarSdk.render(items, tpl));
