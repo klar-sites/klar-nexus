@@ -133,7 +133,6 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
     }
 
     function apply() {
-      console.log('test');
       // Network-independent UI state FIRST, so Clear always hides the button
       // even if the SDK call later fails or hangs.
       const active = isActive();
