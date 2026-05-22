@@ -10,16 +10,99 @@
       .ds-page {
         padding-block: 3rem;
       }
-      .ds-hero {
-        padding-block: 4rem 2rem;
-        border-bottom: 1px solid var(--border);
-        margin-bottom: 3rem;
-      }
       .ds-eyebrow {
         text-transform: uppercase;
         letter-spacing: 0.1em;
         font-size: var(--text-xs);
         font-weight: 600;
+        color: var(--muted-foreground);
+      }
+      /* ---- Showcase hero ---- */
+      .ds-showcase-hero {
+        position: relative;
+        overflow: hidden;
+        padding-block: 6rem 4rem;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 3rem;
+        background: var(--background);
+      }
+      /* graph-paper grid, faded out toward the edges */
+      .ds-showcase-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(var(--border) 1px, transparent 1px),
+          linear-gradient(90deg, var(--border) 1px, transparent 1px);
+        background-size: 48px 48px;
+        -webkit-mask-image: radial-gradient(
+          ellipse 75% 65% at 50% 0%,
+          #000 35%,
+          transparent 78%
+        );
+        mask-image: radial-gradient(
+          ellipse 75% 65% at 50% 0%,
+          #000 35%,
+          transparent 78%
+        );
+        opacity: 0.6;
+        pointer-events: none;
+      }
+      .ds-showcase-hero__inner {
+        position: relative;
+        max-width: 52rem;
+      }
+      .ds-showcase-hero__badge {
+        gap: 0.5rem;
+      }
+      .ds-showcase-hero__badge .dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: var(--radius-full);
+        background: var(--foreground);
+      }
+      .ds-showcase-hero__title {
+        font-size: clamp(2.75rem, 6vw, 4.5rem);
+        line-height: 1.04;
+        letter-spacing: var(--tracking-tight);
+        margin: 1.5rem 0;
+        background: linear-gradient(
+          175deg,
+          var(--foreground) 30%,
+          var(--muted-foreground)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .ds-showcase-hero__lead {
+        max-width: 44ch;
+      }
+      .ds-showcase-hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2.5rem;
+      }
+      .ds-showcase-hero__stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-top: 3.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+      }
+      .ds-showcase-hero__stats > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .ds-showcase-hero__stats dt {
+        font-size: var(--text-3xl);
+        font-weight: var(--font-bold);
+        line-height: 1;
+      }
+      .ds-showcase-hero__stats dd {
+        font-size: var(--text-sm);
         color: var(--muted-foreground);
       }
       .ds-block {
@@ -158,18 +241,106 @@
     </style>
   </head>
   <body>
-    <!-- ===== Doc header ===== -->
-    <header class="ds-hero">
+    <!-- ===== Sticky nav (built from the system's own components) ===== -->
+    <header class="site-header">
       <div class="container">
-        <p class="ds-eyebrow">Nexus</p>
-        <h1 class="page-title">Design System</h1>
-        <p class="lead mt-4 max-w-3xl">
-          A complete, token-driven design language for the Nexus blog — colors,
-          typography, spacing, and a plain HTML / CSS / JS component library.
-          Built on <code>style.css</code>.
-        </p>
+        <div class="site-header__bar">
+          <a class="brand" href="#top">nexus</a>
+          <nav
+            class="nav-desktop items-center gap-8"
+            aria-label="Section navigation"
+          >
+            <a class="nav-link" href="#colors">Colors</a>
+            <a class="nav-link" href="#typography">Typography</a>
+            <a class="nav-link" href="#components">Components</a>
+            <a class="nav-link" href="#sections">Sections</a>
+          </nav>
+          <div class="flex items-center gap-2">
+            <a href="#components" class="btn btn-primary btn-sm">Get started</a>
+            <button class="btn btn-icon" aria-label="Toggle theme">
+              <svg
+                class="icon-sun"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2"></path>
+                <path d="M12 20v2"></path>
+                <path d="m4.93 4.93 1.41 1.41"></path>
+                <path d="m17.66 17.66 1.41 1.41"></path>
+                <path d="M2 12h2"></path>
+                <path d="M20 12h2"></path>
+                <path d="m6.34 17.66-1.41 1.41"></path>
+                <path d="m19.07 4.93-1.41 1.41"></path>
+              </svg>
+              <svg
+                class="icon-moon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </header>
+
+    <!-- ===== Showcase hero ===== -->
+    <section class="ds-showcase-hero" id="top">
+      <div class="container">
+        <div class="ds-showcase-hero__inner">
+          <span class="badge badge-outline ds-showcase-hero__badge">
+            <span class="dot" aria-hidden="true"></span>
+            v1.0 · Token-driven
+          </span>
+          <h1 class="ds-showcase-hero__title">The Nexus Design System</h1>
+          <p class="lead ds-showcase-hero__lead">
+            A complete design language for the Nexus blog — colors, typography,
+            spacing, and a plain HTML / CSS / JS component library, all built on
+            a single <code>style.css</code>.
+          </p>
+          <div class="ds-showcase-hero__actions">
+            <a href="#components" class="btn btn-primary btn-lg">
+              Browse components <span aria-hidden="true">→</span>
+            </a>
+            <a href="#colors" class="btn btn-lg">View foundations</a>
+          </div>
+          <dl class="ds-showcase-hero__stats">
+            <div>
+              <dt>9</dt>
+              <dd>Color tokens</dd>
+            </div>
+            <div>
+              <dt>9</dt>
+              <dd>Type sizes</dd>
+            </div>
+            <div>
+              <dt>20+</dt>
+              <dd>Components</dd>
+            </div>
+            <div>
+              <dt>2</dt>
+              <dd>Themes</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
 
     <main class="container ds-page">
       <!-- ============================================================
