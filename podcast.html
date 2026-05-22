@@ -220,6 +220,7 @@
 
         <!-- klar:strip-start -->
         <script type="module">
+          /*
           const allPostsTpl = document.getElementById('all-posts-tpl').innerHTML;
           if (window.klarSdk) {
             window.posts = klarSdk.list('blog-post', {
@@ -231,10 +232,11 @@
             });
             window.posts.then(items => {
               if (items && items.length) klarSdk.insert('#all-posts', 'replace', klarSdk.render(items,
-              allPostsTpl));
+                allPostsTpl));
               localStorage.setItem('all-posts', JSON.stringify(items || []));
             });
           }
+          */
         </script>
         <!-- klar:strip-end -->
       </main>
