@@ -758,6 +758,7 @@ ul, ol {
 .toc {
   position: sticky;
   top: calc(var(--header-height) + 1.5rem);
+  top: calc(var(--header-height) + 33px);
 }
 .toc-link {
   display: block;
