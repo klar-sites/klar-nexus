@@ -134,9 +134,13 @@ editor can offer them and apply them to any element. Include exactly one such bl
 <script type="application/json" data-klar-ds>
 {
   "classes": {
-    "Colors": [
-      { "label": "Brand blue", "value": "color-blue text-white" },
-      { "label": "Grey", "value": "color-grey" }
+    "Text colors": [
+      { "label": "Body", "value": "text-foreground" },
+      { "label": "Muted", "value": "text-muted-foreground" }
+    ],
+    "Background colors": [
+      { "label": "Brand blue", "value": "bg-blue" },
+      { "label": "Grey", "value": "bg-grey" }
     ],
     "Typography": [
       { "label": "Heading 1", "value": "text-4xl font-bold" },
@@ -157,8 +161,8 @@ editor can offer them and apply them to any element. Include exactly one such bl
 ```
 
 - Everything lives under a single top-level **`classes`** key, with one named group per
-  foundation — **Colors, Typography, Spacing, Radius, Shadows** — each an array of
-  options.
+  foundation — **Text colors, Background colors, Typography, Spacing, Radius, Shadows** —
+  each an array of options.
 - Each entry is `{ "label", "value" }`: **`label`** is the human-readable name shown in
   the editor; **`value`** is the utility class — or space-separated classes — applied
   when chosen. Pair a background with its readable foreground where contrast needs it
