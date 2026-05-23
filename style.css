@@ -583,7 +583,7 @@ ul, ol {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 99999;
   background-color: var(--background);
   border-bottom: 1px solid var(--border);
 }
