@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" class="light" style="color-scheme: light">
-  <head>
+<!DOCTYPE html><html lang="en" class="light" style="color-scheme: light"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
@@ -31,7 +29,7 @@
     <template data-for="related-articles" data-query="list('blog-post', {order: 'updated_at:desc', limit: 10})">
       {% assign matched = 0 %}
       {% for post in items %}
-      {% if matched < 3
+      {% if matched &lt; 3
           and post.filePath != page.filePath
           and post.content.category == page.content.category %}
       <article class="blog-card">
@@ -374,23 +372,44 @@
       
       
       
-      
-      
       <article class="blog-card">
-        <a class="block" href="/blog/blog-post-6.html">
+        <a class="block" href="/blog/blog-post-2.html">
           <div class="blog-card__media">
-            <img src="/images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy">
+            <img src="/images/fashion-lifestyle-tBv1CS6f (1).jpg" alt="" width="387" height="291" loading="lazy">
           </div>
           <div class="blog-card__body">
             <div class="flex items-center gap-2">
-              <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">9 min read</span>
+              <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">6 min read</span>
             </div>
             <h4 class="blog-card__title">
-              En blogg för alla de som tycker det är kul att blogg
+              En blogg för alla de som tycker det är kul att blogga 2
             </h4>
-            <time class="blog-meta" datetime="2023-09-12">May 7, 2026</time>
+            <time class="blog-meta" datetime="2023-09-12">May 5, 2026</time>
             <p class="blog-card__excerpt">
-              Content preview — Description of the article topic and main points.
+              
+            </p>
+          </div>
+        </a>
+      </article>
+      
+      
+      
+      
+      <article class="blog-card">
+        <a class="block" href="/blog/blog-post-1.html">
+          <div class="blog-card__media">
+            <img src="/images/work-lifestyle-Bg_wzXQT.jpg" alt="" width="387" height="291" loading="lazy">
+          </div>
+          <div class="blog-card__body">
+            <div class="flex items-center gap-2">
+              <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">8 min read</span>
+            </div>
+            <h4 class="blog-card__title">
+              En blogg för alla de som älskar att skriva och skratta
+            </h4>
+            <time class="blog-meta" datetime="2023-09-12">May 5, 2026</time>
+            <p class="blog-card__excerpt">
+              
             </p>
           </div>
         </a>
@@ -420,6 +439,52 @@
               </div>
               <div class="card__body">
                 <nav id="toc-nav" class="flex flex-col gap-1" aria-label="Table of contents"></nav>
+                <script>
+      /* ---- Article table of contents + scroll spy ------------------------ */
+      function setupToc() {
+        const article = document.querySelector('[data-article-content="true"]');
+        const tocNav = document.getElementById("toc-nav");
+        if (!article || !tocNav) return;
+
+        const headings = Array.prototype.slice.call(article.querySelectorAll("h2"));
+        tocNav.innerHTML = "";
+        const buttons = [];
+        headings.forEach((heading, i) => {
+          if (!heading.id) heading.id = "heading-" + i;
+          const btn = document.createElement("button");
+          btn.className = "toc-link";
+          btn.textContent = heading.textContent;
+          btn.addEventListener("click", () => {
+            const top = heading.getBoundingClientRect().top + window.pageYOffset - 100;
+            window.scrollTo({
+              top,
+              behavior: "smooth"
+            });
+          });
+          tocNav.appendChild(btn);
+          buttons.push(btn);
+        });
+
+        if ("IntersectionObserver" in window && headings.length) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const idx = headings.indexOf(entry.target);
+                  buttons.forEach((b) => b.classList.remove("is-active"));
+                  if (buttons[idx]) buttons[idx].classList.add("is-active");
+                }
+              });
+            }, {
+              rootMargin: "-100px 0px -85% 0px",
+              threshold: 0
+            }
+          );
+          headings.forEach((h) => observer.observe(h));
+        }
+      }
+                  setupToc();
+    </script>
               </div>
             </div>
           </aside>
@@ -482,5 +547,5 @@
         </div>
       </footer>
     </div>
-  </body>
-</html>
+  
+</body></html>
