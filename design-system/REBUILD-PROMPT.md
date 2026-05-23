@@ -146,7 +146,10 @@ editor can offer them and apply them to any element. Include exactly one such bl
       { "label": "Heading 1", "value": "text-4xl font-bold" },
       { "label": "Body", "value": "text-base" }
     ],
-    "Spacing": [
+    "Margin": [
+      { "label": "Medium", "value": "mt-6" }
+    ],
+    "Padding": [
       { "label": "Medium", "value": "p-6" }
     ],
     "Radius": [
@@ -161,8 +164,8 @@ editor can offer them and apply them to any element. Include exactly one such bl
 ```
 
 - Everything lives under a single top-level **`classes`** key, with one named group per
-  foundation — **Text colors, Background colors, Typography, Spacing, Radius, Shadows** —
-  each an array of options.
+  foundation — **Text colors, Background colors, Typography, Margin, Padding, Radius,
+  Shadows** — each an array of options.
 - Each entry is `{ "label", "value" }`: **`label`** is the human-readable name shown in
   the editor; **`value`** is the utility class — or space-separated classes — applied
   when chosen. Pair a background with its readable foreground where contrast needs it
