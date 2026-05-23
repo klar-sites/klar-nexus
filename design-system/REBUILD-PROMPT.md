@@ -141,6 +141,7 @@ close to this skeleton:
         </div>
       </section>
     </main>
+    <footer class="site-footer">…</footer>
 
     <script> /* theme toggle: [aria-label="Toggle theme"] → toggle .dark */ </script>
   </body>
