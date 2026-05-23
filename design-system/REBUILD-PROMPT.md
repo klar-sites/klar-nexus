@@ -123,6 +123,50 @@ Author it tokens-first, in this order, with section banners as comments:
 - A small theme-toggle script wiring `[aria-label="Toggle theme"]` to toggle `.dark`.
 - Mobile-responsive and accessible (labels, `aria-*`, focus states, alt text).
 
+### Foundation token config (`data-klar-ds`)
+
+Just as `data-klar-ds-elements` exposes the **components** for extraction, the design
+system's **foundation utility classes** are cataloged in one JSON manifest so the Klar
+editor can offer them and apply them to any element. Include exactly one such block in
+`design-system.html`:
+
+```html
+<script type="application/json" data-klar-ds>
+{
+  "classes": {
+    "Colors": [
+      { "label": "Brand blue", "value": "color-blue text-white" },
+      { "label": "Grey", "value": "color-grey" }
+    ],
+    "Typography": [
+      { "label": "Heading 1", "value": "text-4xl font-bold" },
+      { "label": "Body", "value": "text-base" }
+    ],
+    "Spacing": [
+      { "label": "Medium", "value": "p-6" }
+    ],
+    "Radius": [
+      { "label": "Large", "value": "rounded-lg" }
+    ],
+    "Shadows": [
+      { "label": "Small", "value": "shadow-sm" }
+    ]
+  }
+}
+</script>
+```
+
+- Everything lives under a single top-level **`classes`** key, with one named group per
+  foundation — **Colors, Typography, Spacing, Radius, Shadows** — each an array of
+  options.
+- Each entry is `{ "label", "value" }`: **`label`** is the human-readable name shown in
+  the editor; **`value`** is the utility class — or space-separated classes — applied
+  when chosen. Pair a background with its readable foreground where contrast needs it
+  (e.g. `"color-blue text-white"`).
+- **`value` may only reference classes that exist in `style.css`** (no phantom classes).
+  Keep this manifest in lockstep with the real utilities and with what the Foundations
+  sections render — it is the token counterpart to the component catalog.
+
 ### Reference structure to follow closely
 
 Design the actual look, tokens, components, and content **freely** from the target —
