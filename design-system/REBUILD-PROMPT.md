@@ -20,6 +20,43 @@ rebuild it cleanly. The original stylesheet must be entirely discarded; nothing 
 output may depend on it (no Tailwind/Bootstrap/etc. classes, no leftover source
 classes, no second stylesheet).
 
+## Single source of truth — ONLY the new design system styles the site
+
+Every visual in the rebuilt site comes from the new `style.css` — its tokens,
+components, and utility classes, as demonstrated in `design-system.html`. Nothing else.
+**This is absolute, no exceptions:**
+
+- **No** inline `style="…"` attributes on any element.
+- **No** `<style>` blocks in any page.
+- **No** other or third-party stylesheet, CDN/Google CSS framework, or framework
+  classes (Tailwind/Bootstrap/etc.), and **none** of the source's original classes.
+- **No** hardcoded visual values in markup — colors, sizes, spacing, radii, shadows
+  live in `style.css` as tokens/classes, never sprinkled inline.
+- The **only** `<style>` permitted anywhere in the project is the `.ds-*` documentation
+  chrome inside `design-system.html`.
+
+If a page needs something the system can't yet express, **add it to `style.css` (and
+surface it in `design-system.html`) first, then use the class** — never style ad hoc.
+The design system must be complete enough that every page is built purely from it.
+
+## Quality bar — what "pixel-perfect" means here
+
+"Pixel-perfect" is the **quality target**: the rebuilt site must look flawless and
+polished — **as good as or better than the original** — achieved entirely through the
+design system. It does **not** mean copying the source's CSS values; it means matching
+its look and feel and then executing it to a higher standard:
+
+- Faithful to the source's layout, hierarchy, type, color, spacing, and components —
+  then refined into a clean, consistent, production-quality result.
+- Cohesive throughout: consistent spacing rhythm, aligned grids, a balanced type scale,
+  proper hover/focus/active states, polished in **both light and dark**, correct at
+  every breakpoint.
+- Zero rough edges: nothing misaligned, no invisible text, no overflow, no inconsistent
+  spacing or one-off styling. If something looks off, fix it **in the design system** so
+  every page benefits.
+- Aim higher than the source where its design is weak — the new system should be the
+  best version of that look.
+
 ## Deliverables
 
 1. `style.css` — one standalone stylesheet at the target directory root. No imports except a
