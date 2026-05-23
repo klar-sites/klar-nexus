@@ -7,9 +7,11 @@
 import { createKlarClient } from "https://editor.klar.website/sdk/content-static.js";
 
 /* ---- Klar client ----------------------------------------------------- */
-let projectId = 421;
+let projectId = 422;
 function getProjectId() {
-  const data = localStorage.getItem("klar") ? JSON.parse(localStorage.getItem("klar")) : {};
+  const data = localStorage.getItem("klar")
+    ? JSON.parse(localStorage.getItem("klar"))
+    : {};
   return data.activeProjectId || projectId;
 }
 window.projectId = getProjectId();
@@ -24,7 +26,10 @@ window.klarSdk = createKlarClient({
 window.setPosts = function setPosts(category, tag, topic, onError) {
   const grid = document.getElementById("all-posts");
   const tplEl = document.getElementById("all-posts-tpl");
-  if (!grid || !tplEl || !window.klarSdk) { if (onError) onError(); return; }
+  if (!grid || !tplEl || !window.klarSdk) {
+    if (onError) onError();
+    return;
+  }
 
   const fixed = grid.dataset.category || null;
   const where = {};
@@ -35,7 +40,11 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
 
   const tpl = tplEl.innerHTML;
   klarSdk
-    .list(grid.dataset.pageType || "blog-post", { where, order: "updated_at:desc", limit: 10 })
+    .list(grid.dataset.pageType || "blog-post", {
+      where,
+      order: "updated_at:desc",
+      limit: 10,
+    })
     .then((items) => {
       // console.log('Items', items);
       const info = document.getElementById("filter-info");
@@ -46,19 +55,26 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
       if (items && items.length) {
         klarSdk.insert("#all-posts", "replace", klarSdk.render(items, tpl));
       } else {
-        klarSdk.insert("#all-posts", "replace", klarSdk.render(window.posts, tpl));
+        klarSdk.insert(
+          "#all-posts",
+          "replace",
+          klarSdk.render(window.posts, tpl),
+        );
       }
       // Update only the COUNT TEXT here. Visibility of the info line and the
       // Clear Filters button is owned by the synchronous filter logic in
       // setupFilters() — which knows about a page's locked category — so a
       // locked category (e.g. Technology) never re-shows the Clear button.
       if (info) {
-        info.textContent = "Showing " + (items ? items.length : 0) + " of " + total + " posts";
+        info.textContent =
+          "Showing " + (items ? items.length : 0) + " of " + total + " posts";
         if (topic && topic !== "all") info.textContent += " • " + topic;
         if (tag && tag !== "all") info.textContent += " • Tagged: " + tag;
       }
     })
-    .catch(() => { if (onError) onError(); });
+    .catch(() => {
+      if (onError) onError();
+    });
 };
 
 (function () {
@@ -104,22 +120,35 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
     if (!bar) return;
 
     const grid = document.getElementById("all-posts");
-    const klarMode = !!(window.klarSdk && document.getElementById("all-posts-tpl"));
-    const cards = () => Array.prototype.slice.call(document.querySelectorAll("#all-posts > [data-category]"));
+    const klarMode = !!(
+      window.klarSdk && document.getElementById("all-posts-tpl")
+    );
+    const cards = () =>
+      Array.prototype.slice.call(
+        document.querySelectorAll("#all-posts > [data-category]"),
+      );
     const totalEl = document.getElementById("filter-info");
     const clearBtn = document.getElementById("clear-filters");
     const fixed = grid ? grid.dataset.category || null : null;
     const state = { category: fixed || "all", topic: "all", tag: "all" };
 
     function closeAll() {
-      bar.querySelectorAll("[data-filter-menu]").forEach((m) => m.classList.add("hidden"));
-      bar.querySelectorAll("[data-filter-toggle]").forEach((b) => b.setAttribute("aria-expanded", "false"));
+      bar
+        .querySelectorAll("[data-filter-menu]")
+        .forEach((m) => m.classList.add("hidden"));
+      bar
+        .querySelectorAll("[data-filter-toggle]")
+        .forEach((b) => b.setAttribute("aria-expanded", "false"));
     }
 
     // A filter is "active" when any control differs from its default (the
     // category default is the page's locked category, if any).
     function isActive() {
-      return state.category !== (fixed || "all") || state.topic !== "all" || state.tag !== "all";
+      return (
+        state.category !== (fixed || "all") ||
+        state.topic !== "all" ||
+        state.tag !== "all"
+      );
     }
 
     // Client-side filtering of the static cards (used standalone and as the
@@ -129,13 +158,18 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
       let shown = 0;
       list.forEach((card) => {
         const ok =
-          (state.category === "all" || card.dataset.category === state.category) &&
-          (state.topic === "all" || (card.dataset.topic || "").split(",").indexOf(state.topic) > -1) &&
-          (state.tag === "all" || (card.dataset.tag || "").split(",").indexOf(state.tag) > -1);
+          (state.category === "all" ||
+            card.dataset.category === state.category) &&
+          (state.topic === "all" ||
+            (card.dataset.topic || "").split(",").indexOf(state.topic) > -1) &&
+          (state.tag === "all" ||
+            (card.dataset.tag || "").split(",").indexOf(state.tag) > -1);
         card.style.display = ok ? "" : "none";
         if (ok) shown++;
       });
-      if (totalEl) totalEl.textContent = "Showing " + shown + " of " + list.length + " posts";
+      if (totalEl)
+        totalEl.textContent =
+          "Showing " + shown + " of " + list.length + " posts";
     }
 
     function apply() {
@@ -145,7 +179,8 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
       if (clearBtn) clearBtn.classList.toggle("hidden", !active);
       if (totalEl) totalEl.classList.toggle("hidden", !active);
 
-      if (klarMode) window.setPosts(state.category, state.tag, state.topic, applyClient);
+      if (klarMode)
+        window.setPosts(state.category, state.tag, state.topic, applyClient);
       else applyClient();
     }
 
@@ -173,8 +208,13 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
       const key = toggle.dataset.filterToggle; // category | topic | tag
       const label = toggle.querySelector("span");
       state[key] = opt.dataset.value;
-      label.textContent = opt.dataset.value === "all" ? toggle.dataset.defaultLabel : opt.dataset.value;
-      filter.querySelectorAll("[data-value]").forEach((o) => o.classList.remove("is-selected"));
+      label.textContent =
+        opt.dataset.value === "all"
+          ? toggle.dataset.defaultLabel
+          : opt.dataset.value;
+      filter
+        .querySelectorAll("[data-value]")
+        .forEach((o) => o.classList.remove("is-selected"));
       opt.classList.add("is-selected");
       closeAll();
       apply();
@@ -188,7 +228,11 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
         bar.querySelectorAll("[data-filter-toggle]").forEach((t) => {
           t.querySelector("span").textContent = t.dataset.defaultLabel;
         });
-        bar.querySelectorAll("[data-value]").forEach((o) => o.classList.toggle("is-selected", o.dataset.value === "all"));
+        bar
+          .querySelectorAll("[data-value]")
+          .forEach((o) =>
+            o.classList.toggle("is-selected", o.dataset.value === "all"),
+          );
         apply();
       });
     }
@@ -212,7 +256,8 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
       btn.className = "toc-link";
       btn.textContent = heading.textContent;
       btn.addEventListener("click", () => {
-        const top = heading.getBoundingClientRect().top + window.pageYOffset - 100;
+        const top =
+          heading.getBoundingClientRect().top + window.pageYOffset - 100;
         window.scrollTo({ top, behavior: "smooth" });
       });
       tocNav.appendChild(btn);
@@ -230,20 +275,27 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
             }
           });
         },
-        { rootMargin: "-100px 0px -85% 0px", threshold: 0 }
+        { rootMargin: "-100px 0px -85% 0px", threshold: 0 },
       );
       headings.forEach((h) => observer.observe(h));
     }
   }
   // TOC runs after the SDK may have replaced the article body
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => setTimeout(setupToc, 0));
+  if (document.readyState === "loading")
+    document.addEventListener("DOMContentLoaded", () =>
+      setTimeout(setupToc, 0),
+    );
   else setTimeout(setupToc, 0);
 
   /* ---- Back to top --------------------------------------------------- */
   const backToTop = document.getElementById("back-to-top");
   if (backToTop) {
-    window.addEventListener("scroll", () => backToTop.classList.toggle("hidden", window.pageYOffset < 400));
-    backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    window.addEventListener("scroll", () =>
+      backToTop.classList.toggle("hidden", window.pageYOffset < 400),
+    );
+    backToTop.addEventListener("click", () =>
+      window.scrollTo({ top: 0, behavior: "smooth" }),
+    );
   }
 
   /* ---- Search page: hide the browse prompt once typing --------------- */
@@ -251,7 +303,8 @@ window.setPosts = function setPosts(category, tag, topic, onError) {
   if (searchInput) {
     searchInput.addEventListener("input", function () {
       const prompt = document.getElementById("search-prompt");
-      if (prompt) prompt.classList.toggle("hidden", this.value.trim().length > 0);
+      if (prompt)
+        prompt.classList.toggle("hidden", this.value.trim().length > 0);
     });
   }
 })();

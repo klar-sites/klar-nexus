@@ -53,7 +53,7 @@
     </header>
 
     <!-- ===== Main ===== -->
-    <main id="main-content" class="container py-12">
+    <main id="main-content" class="container py-12" style="min-height: 70vh">
       <div class="max-w-3xl mx-auto">
 
         <h1 class="page-title mb-8">Search Results</h1>
@@ -68,6 +68,21 @@
           </div>
         </form>
 
+        <p id="search-info" class="text-muted-foreground mb-8 hidden" aria-live="polite"></p>
+
+        <div id="search-results" class="grid sm:grid-cols-2 gap-8 hidden"></div>
+
+        <div id="search-spinner" class="flex justify-center py-12 hidden" role="status" aria-live="polite">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="sr-only">Loading…</span>
+        </div>
+
+        <div id="search-empty" class="text-center py-12 hidden">
+          <h2 class="text-2xl font-bold mb-4">No results found</h2>
+          <p class="text-muted-foreground">We couldn't find any articles matching
+            "<span data-q></span>". Try a different search term.</p>
+        </div>
+
         <div id="search-prompt" class="text-center py-12">
           <h2 class="text-2xl font-bold mb-4">What are you looking for?</h2>
           <p class="text-muted-foreground mb-8">Enter a search term above to find articles, or browse our latest
@@ -79,6 +94,114 @@
             <a href="/podcast.html" class="btn">Podcast</a>
           </div>
         </div>
+
+        <!-- Result card template (rendered client-side via klarSdk.render) -->
+        <template id="search-result-tpl"><article class="blog-card"><a class="block" href="${url}"><div class="blog-card__media"><img src="${content.image.src}" alt="" width="387" height="291" loading="lazy"></div><div class="blog-card__body"><div class="flex items-center gap-2"><span class="blog-meta">${content.category}</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><span class="blog-meta">${content.readTime}</span></div><h3 class="blog-card__title">${content.title}</h3><p class="blog-card__excerpt">${content.lead}</p></div></a></article></template>
+
+        <!-- Search behaviour: live client-side filter over Klar blog-post items -->
+        <script type="module">
+          (function () {
+            var input = document.getElementById("search-input");
+            var promptEl = document.getElementById("search-prompt");
+            var results = document.getElementById("search-results");
+            var empty = document.getElementById("search-empty");
+            var info = document.getElementById("search-info");
+            var spinner = document.getElementById("search-spinner");
+            var tplEl = document.getElementById("search-result-tpl");
+            if (!input || !tplEl) return;
+            var tpl = tplEl.innerHTML;
+
+            var all = [];
+            var ready = false;
+
+            function show(el, on) { if (el) el.classList.toggle("hidden", !on); }
+
+            var spinTimer = null;
+            function startSpinner() {
+              if (spinTimer) return;
+              spinTimer = setTimeout(function () {
+                show(results, false); show(empty, false); show(info, false);
+                show(spinner, true);
+              }, 300);
+            }
+            function stopSpinner() {
+              if (spinTimer) { clearTimeout(spinTimer); spinTimer = null; }
+              show(spinner, false);
+            }
+
+            function matches(item, q) {
+              var c = (item && item.content) || {};
+              var hay = [
+                c.title, c.lead, c.category,
+                Array.isArray(c.tags) ? c.tags.join(" ") : "",
+                Array.isArray(c.topics) ? c.topics.join(" ") : ""
+              ].filter(Boolean).join(" ").toLowerCase();
+              return hay.indexOf(q) > -1;
+            }
+
+            function run(raw) {
+              var typed = (raw || "").trim();
+              var q = typed.toLowerCase();
+
+              // Keep the query shareable in the URL (?q=)
+              var url = new URL(window.location.href);
+              if (typed) url.searchParams.set("q", typed); else url.searchParams.delete("q");
+              window.history.replaceState(null, "", url);
+
+              if (!q) {
+                stopSpinner();
+                show(promptEl, true); show(results, false); show(empty, false); show(info, false);
+                results.innerHTML = "";
+                return;
+              }
+              show(promptEl, false);
+              if (!ready) { startSpinner(); return; } // data still loading
+              stopSpinner();
+
+              var list = all.filter(function (it) { return matches(it, q); });
+              if (list.length) {
+                if (window.klarSdk) klarSdk.insert("#search-results", "replace", klarSdk.render(list, tpl));
+                show(results, true); show(empty, false);
+                info.textContent = list.length + " result" + (list.length === 1 ? "" : "s") + ' for "' + typed + '"';
+                show(info, true);
+              } else {
+                results.innerHTML = ""; show(results, false); show(info, false);
+                var qSpan = empty.querySelector("[data-q]");
+                if (qSpan) qSpan.textContent = typed;
+                show(empty, true);
+              }
+            }
+
+            var t;
+            input.addEventListener("input", function () {
+              var v = this.value;
+              clearTimeout(t);
+              t = setTimeout(function () { run(v); }, 150);
+            });
+
+            function waitForSdk(cb, tries) {
+              if (window.klarSdk) return cb();
+              if ((tries || 0) > 40) return; // give up after ~2s
+              setTimeout(function () { waitForSdk(cb, (tries || 0) + 1); }, 50);
+            }
+
+            // Pre-fill from ?q= immediately so the field isn't empty while data loads
+            var pre = new URL(window.location.href).searchParams.get("q");
+            if (pre && !input.value) { input.value = pre; show(promptEl, false); }
+            if (input.value.trim()) run(input.value);
+
+            waitForSdk(function () {
+              klarSdk.list("blog-post", { order: "updated_at:desc", limit: 200 })
+                .then(function (items) {
+                  all = items || [];
+                  ready = true;
+                  stopSpinner();
+                  if (input.value.trim()) run(input.value);
+                })
+                .catch(function () { ready = true; stopSpinner(); });
+            });
+          })();
+        </script>
 
       </div>
     </main>
