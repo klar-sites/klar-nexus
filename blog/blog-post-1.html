@@ -420,52 +420,7 @@
               </div>
               <div class="card__body">
                 <nav id="toc-nav" class="flex flex-col gap-1" aria-label="Table of contents"></nav>
-                <script>
-      /* ---- Article table of contents + scroll spy ------------------------ */
-      function setupToc() {
-        const article = document.querySelector('[data-article-content="true"]');
-        const tocNav = document.getElementById("toc-nav");
-        if (!article || !tocNav) return;
-
-        const headings = Array.prototype.slice.call(article.querySelectorAll("h2"));
-        tocNav.innerHTML = "";
-        const buttons = [];
-        headings.forEach((heading, i) => {
-          if (!heading.id) heading.id = "heading-" + i;
-          const btn = document.createElement("button");
-          btn.className = "toc-link";
-          btn.textContent = heading.textContent;
-          btn.addEventListener("click", () => {
-            const top = heading.getBoundingClientRect().top + window.pageYOffset - 100;
-            window.scrollTo({
-              top,
-              behavior: "smooth"
-            });
-          });
-          tocNav.appendChild(btn);
-          buttons.push(btn);
-        });
-
-        if ("IntersectionObserver" in window && headings.length) {
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  const idx = headings.indexOf(entry.target);
-                  buttons.forEach((b) => b.classList.remove("is-active"));
-                  if (buttons[idx]) buttons[idx].classList.add("is-active");
-                }
-              });
-            }, {
-              rootMargin: "-100px 0px -85% 0px",
-              threshold: 0
-            }
-          );
-          headings.forEach((h) => observer.observe(h));
-        }
-      }
-                  setupToc();
-    </script>
+                
               </div>
             </div>
           </aside>
