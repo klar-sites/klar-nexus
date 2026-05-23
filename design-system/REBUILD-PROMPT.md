@@ -93,7 +93,7 @@ but keep the document architecture and the documentation-chrome (`.ds-*`) conven
 close to this skeleton:
 
 ```
-<html class="light" style="color-scheme: light">
+<html>
   <head>
     <link rel="stylesheet" href="/style.css" />
     <style> /* documentation chrome ONLY — every rule prefixed .ds-, commented
