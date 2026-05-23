@@ -143,10 +143,14 @@
               var typed = (raw || "").trim();
               var q = typed.toLowerCase();
 
-              // Keep the query shareable in the URL (?q=)
-              var url = new URL(window.location.href);
-              if (typed) url.searchParams.set("q", typed); else url.searchParams.delete("q");
-              window.history.replaceState(null, "", url);
+              // Keep the query shareable in the URL (?q=). Skipped inside the Klar
+              // editor, where the page runs in an about:srcdoc iframe and
+              // history.replaceState throws a SecurityError.
+              try {
+                var url = new URL(window.location.href);
+                if (typed) url.searchParams.set("q", typed); else url.searchParams.delete("q");
+                window.history.replaceState(null, "", url);
+              } catch (e) { /* about:srcdoc / cross-origin — URL sync unavailable */ }
 
               if (!q) {
                 stopSpinner();
