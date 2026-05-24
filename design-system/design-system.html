@@ -1,10 +1,8 @@
-<!doctype html>
-<html lang="en" class="light" style="color-scheme: light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html><html lang="en" class="light" style="color-scheme: light"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus — Design System</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/klar-nexus/style.css">
     <style>
       /* ---- Documentation chrome only (not part of the design system) ---- */
       .ds-page {
@@ -271,7 +269,7 @@
   </head>
   <body>
     <!-- ===== Foundation token catalog (utility classes, for Klar extraction) ===== -->
-    <script type="application/json" data-klar-ds>
+    <script type="application/json" data-klar-ds="">
       {
         "classes": {
           "Text color": [
@@ -391,8 +389,7 @@
           <div class="flex items-center gap-2">
             <a href="#components" class="btn btn-primary btn-sm">Get started</a>
             <button class="btn btn-icon" aria-label="Toggle theme">
-              <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="4"></circle>
                 <path d="M12 2v2"></path>
                 <path d="M12 20v2"></path>
@@ -403,8 +400,7 @@
                 <path d="m6.34 17.66-1.41 1.41"></path>
                 <path d="m19.07 4.93-1.41 1.41"></path>
               </svg>
-              <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
               </svg>
             </button>
@@ -665,13 +661,12 @@
           <button class="btn btn-sm" data-klar-ds-label="Small button">Small</button>
           <button class="btn btn-lg" data-klar-ds-label="Large button">Large</button>
           <button class="btn btn-icon" aria-label="Search" data-klar-ds-label="Icon button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <path d="m21 21-4.3-4.3"></path>
             </svg>
           </button>
-          <button class="btn" disabled data-klar-ds-label="Disabled button">Disabled</button>
+          <button class="btn" disabled="" data-klar-ds-label="Disabled button">Disabled</button>
           <a href="#" class="btn btn-primary" role="button" data-klar-ds-label="Read more button">Read more <span aria-hidden="true">→</span></a>
         </div>
 
@@ -705,11 +700,11 @@
         <div class="ds-specimens ds-specimens--grid" data-klar-ds-elements="Forms">
           <div class="field" data-klar-ds-label="Text input field">
             <label class="label" for="ds-name">Name</label>
-            <input class="input" id="ds-name" type="text" placeholder="Your full name" />
+            <input class="input" id="ds-name" type="text" placeholder="Your full name">
           </div>
           <div class="field" data-klar-ds-label="Email input field">
             <label class="label" for="ds-email">Email</label>
-            <input class="input" id="ds-email" type="email" placeholder="your.email@example.com" />
+            <input class="input" id="ds-email" type="email" placeholder="your.email@example.com">
           </div>
           <div class="field" data-klar-ds-label="Select field">
             <label class="label" for="ds-select">Category</label>
@@ -748,8 +743,7 @@
           <div class="card" data-klar-ds-label="Info card">
             <div class="card__header">
               <h3 class="card__title">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                 </svg>
@@ -771,7 +765,7 @@
           <article class="blog-card" data-klar-ds-label="Blog card">
             <a href="#" class="block">
               <div class="blog-card__media">
-                <img src="../images/tech-post-HXCQgDvH.jpg" alt="" width="387" height="291" loading="lazy" />
+                <img src="../images/tech-post-HXCQgDvH.jpg" alt="" width="387" height="291" loading="lazy">
               </div>
               <div class="blog-card__body">
                 <div class="flex items-center gap-2">
@@ -791,7 +785,7 @@
           <article class="blog-card" data-klar-ds-label="Blog card">
             <a href="#" class="block">
               <div class="blog-card__media">
-                <img src="../images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy" />
+                <img src="../images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy">
               </div>
               <div class="blog-card__body">
                 <div class="flex items-center gap-2">
@@ -837,15 +831,13 @@
                 </nav>
                 <div class="nav-desktop items-center gap-2">
                   <a href="#" class="btn btn-icon" aria-label="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <circle cx="11" cy="11" r="8"></circle>
                       <path d="m21 21-4.3-4.3"></path>
                     </svg>
                   </a>
                   <button class="btn btn-icon" aria-label="Toggle theme">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <circle cx="12" cy="12" r="4"></circle>
                       <path d="M12 2v2"></path>
                       <path d="M12 20v2"></path>
@@ -866,7 +858,7 @@
           <section class="container py-16" data-klar-ds-label="Hero">
             <div class="hero lg:grid-cols-2">
               <div class="hero__media">
-                <img src="../images/work-lifestyle-Bg_wzXQT.jpg" alt="Featured article" width="592" height="444" />
+                <img src="../images/work-lifestyle-Bg_wzXQT.jpg" alt="Featured article" width="592" height="444">
               </div>
               <div class="hero__content">
                 <h1 class="featured-title">
@@ -949,12 +941,11 @@
               <article class="blog-card">
                 <a href="#" class="block">
                   <div class="blog-card__media">
-                    <img src="../images/tech-post-HXCQgDvH.jpg" alt="" width="387" height="291" loading="lazy" />
+                    <img src="../images/tech-post-HXCQgDvH.jpg" alt="" width="387" height="291" loading="lazy">
                   </div>
                   <div class="blog-card__body">
                     <div class="flex items-center gap-2">
-                      <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs"
-                        aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
+                      <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
                     </div>
                     <h3 class="blog-card__title">
                       En blogg för alla de som tycker det är kul att blogga
@@ -968,12 +959,11 @@
               <article class="blog-card">
                 <a href="#" class="block">
                   <div class="blog-card__media">
-                    <img src="../images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy" />
+                    <img src="../images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy">
                   </div>
                   <div class="blog-card__body">
                     <div class="flex items-center gap-2">
-                      <span class="blog-meta">Business</span><span class="text-muted-foreground text-xs"
-                        aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-08">May 8, 2026</time>
+                      <span class="blog-meta">Business</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-08">May 8, 2026</time>
                     </div>
                     <h3 class="blog-card__title">
                       Strategier för det moderna ledarskapet
@@ -987,12 +977,11 @@
               <article class="blog-card">
                 <a href="#" class="block">
                   <div class="blog-card__media">
-                    <img src="../images/fashion-post-4m_ykv-I.jpg" alt="" width="387" height="291" loading="lazy" />
+                    <img src="../images/fashion-post-4m_ykv-I.jpg" alt="" width="387" height="291" loading="lazy">
                   </div>
                   <div class="blog-card__body">
                     <div class="flex items-center gap-2">
-                      <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs"
-                        aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-06">May 6, 2026</time>
+                      <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-06">May 6, 2026</time>
                     </div>
                     <h3 class="blog-card__title">
                       Stil och substans i vardagen
@@ -1013,12 +1002,11 @@
               <article class="blog-card">
                 <a href="#" class="block">
                   <div class="blog-card__media">
-                    <img src="../images/tech-post-HXCQgDvH.jpg" alt="" width="387" height="291" loading="lazy" />
+                    <img src="../images/tech-post-HXCQgDvH.jpg" alt="" width="387" height="291" loading="lazy">
                   </div>
                   <div class="blog-card__body">
                     <div class="flex items-center gap-2">
-                      <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs"
-                        aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
+                      <span class="blog-meta">Technology</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-10">May 10, 2026</time>
                     </div>
                     <h3 class="blog-card__title">
                       Self-driving cars: everything you need to know
@@ -1032,12 +1020,11 @@
               <article class="blog-card">
                 <a href="#" class="block">
                   <div class="blog-card__media">
-                    <img src="../images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy" />
+                    <img src="../images/business-post-6IsrfXyD.jpg" alt="" width="387" height="291" loading="lazy">
                   </div>
                   <div class="blog-card__body">
                     <div class="flex items-center gap-2">
-                      <span class="blog-meta">Business</span><span class="text-muted-foreground text-xs"
-                        aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-08">May 8, 2026</time>
+                      <span class="blog-meta">Business</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-08">May 8, 2026</time>
                     </div>
                     <h3 class="blog-card__title">
                       The importance of corporate social responsibility
@@ -1051,12 +1038,11 @@
               <article class="blog-card">
                 <a href="#" class="block">
                   <div class="blog-card__media">
-                    <img src="../images/fashion-post-4m_ykv-I.jpg" alt="" width="387" height="291" loading="lazy" />
+                    <img src="../images/fashion-post-4m_ykv-I.jpg" alt="" width="387" height="291" loading="lazy">
                   </div>
                   <div class="blog-card__body">
                     <div class="flex items-center gap-2">
-                      <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs"
-                        aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-06">May 6, 2026</time>
+                      <span class="blog-meta">Lifestyle</span><span class="text-muted-foreground text-xs" aria-hidden="true">—</span><time class="blog-meta" datetime="2026-05-06">May 6, 2026</time>
                     </div>
                     <h3 class="blog-card__title">
                       Mindful living: finding balance in a busy world
@@ -1079,9 +1065,8 @@
               <p class="text-lg mb-8" style="opacity: 0.85">
                 Get the latest articles delivered straight to your inbox.
               </p>
-              <form class="flex flex-col sm:flex-row gap-4 justify-center"
-                style="max-width: 32rem; margin-inline: auto">
-                <input class="input" type="email" placeholder="your.email@example.com" aria-label="Email address" />
+              <form class="flex flex-col sm:flex-row gap-4 justify-center" style="max-width: 32rem; margin-inline: auto">
+                <input class="input" type="email" placeholder="your.email@example.com" aria-label="Email address">
                 <button class="btn btn-secondary" type="submit">
                   Subscribe
                 </button>
@@ -1103,16 +1088,13 @@
                 <div class="card__body">
                   <form class="flex flex-col gap-6">
                     <div class="field">
-                      <label class="label" for="s-name">Name</label><input class="input" id="s-name"
-                        placeholder="Your full name" />
+                      <label class="label" for="s-name">Name</label><input class="input" id="s-name" placeholder="Your full name">
                     </div>
                     <div class="field">
-                      <label class="label" for="s-email">Email</label><input class="input" id="s-email" type="email"
-                        placeholder="your.email@example.com" />
+                      <label class="label" for="s-email">Email</label><input class="input" id="s-email" type="email" placeholder="your.email@example.com">
                     </div>
                     <div class="field">
-                      <label class="label" for="s-message">Message</label><textarea class="textarea" id="s-message"
-                        rows="5" placeholder="Tell us more…"></textarea>
+                      <label class="label" for="s-message">Message</label><textarea class="textarea" id="s-message" rows="5" placeholder="Tell us more…"></textarea>
                     </div>
                     <button class="btn btn-primary btn-block" type="submit">
                       Send message
@@ -1212,5 +1194,5 @@
           });
         });
     </script>
-  </body>
-</html>
+  
+</body></html>
