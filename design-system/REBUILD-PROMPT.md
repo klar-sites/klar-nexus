@@ -115,12 +115,15 @@ Author it tokens-first, in this order, with section banners as comments:
   - **Component Library**: one subsection per component group. Wrap each group in a
     listing container carrying `data-klar-ds-elements="GroupName"` (e.g. `Buttons`,
     `Badges`, `Cards`, `Forms`). Components sit directly inside, showing every variant
-    and state.
+    and state. **Every direct child carries a `data-klar-ds-label="…"`** naming what it
+    is (e.g. `Primary button`, `Outline button`, `Secondary badge`).
   - **Sections**: full, **template-ready** page-pattern variants inside a
     `data-klar-ds-elements="Sections"` container. These are extracted and dropped into
     real pages directly, so:
     - **Each direct child is one self-contained root section**, extractable on its own —
-      and is a **single** section: **never nest a `<section>` inside a section.**
+      and is a **single** section: **never nest a `<section>` inside a section.** It
+      carries a `data-klar-ds-label="…"` naming it (e.g. `Hero`, `Newsletter CTA`,
+      `Footer`).
     - They hold **real sample content only** — never demo, placeholder-explanatory, or
       "this shows how X works" text about the design system itself.
     - Cover the page patterns the source uses — header, hero, **a text-content /
@@ -222,10 +225,15 @@ close to this skeleton:
       <section class="ds-block" id="radius">      … .ds-radius-row + .ds-shadow-row … </section>
 
       <!-- COMPONENT LIBRARY — each group: <h3 class="ds-subhead"> + a listing
-           container with data-klar-ds-elements="GroupName" holding the variants -->
+           container with data-klar-ds-elements="GroupName". Every direct child
+           (each variant) carries data-klar-ds-label="…". -->
       <section class="ds-block" id="components">
         <h3 class="ds-subhead">Buttons</h3>
-        <div class="ds-specimens" data-klar-ds-elements="Buttons"> … </div>
+        <div class="ds-specimens" data-klar-ds-elements="Buttons">
+          <button class="btn btn-primary" data-klar-ds-label="Primary button">…</button>
+          <button class="btn btn-outline" data-klar-ds-label="Outline button">…</button>
+          … one labelled child per variant …
+        </div>
         … Badges, Tags, Forms (.ds-specimens--grid), Cards, … …
       </section>
 
@@ -235,13 +243,13 @@ close to this skeleton:
       <section class="ds-block" id="sections">
         <div class="ds-specimens ds-specimens--stack ds-sections"
              data-klar-ds-elements="Sections">
-          <header class="site-header">…</header>
-          <section>…hero…</section>
-          <section>…text content / article body (prose)…</section>
-          <section>…content/post grid…</section>
-          <section>…CTA…</section>
-          <section>…contact…</section>
-          <footer class="site-footer">…</footer>
+          <header class="site-header" data-klar-ds-label="Header">…</header>
+          <section data-klar-ds-label="Hero">…hero…</section>
+          <section data-klar-ds-label="Text content">…article body (prose)…</section>
+          <section data-klar-ds-label="Post grid">…content/post grid…</section>
+          <section data-klar-ds-label="Newsletter CTA">…CTA…</section>
+          <section data-klar-ds-label="Contact">…contact…</section>
+          <footer class="site-footer" data-klar-ds-label="Footer">…</footer>
         </div>
       </section>
     </main>
