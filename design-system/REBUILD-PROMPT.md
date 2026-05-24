@@ -116,10 +116,16 @@ Author it tokens-first, in this order, with section banners as comments:
     listing container carrying `data-klar-ds-elements="GroupName"` (e.g. `Buttons`,
     `Badges`, `Cards`, `Forms`). Components sit directly inside, showing every variant
     and state.
-  - **Sections**: full page-pattern variants (header, hero, post/content grid, CTA,
-    contact, footer…) inside a `data-klar-ds-elements="Sections"` container, where
-    **each direct child is a self-contained root section** that could be extracted on
-    its own.
+  - **Sections**: full, **template-ready** page-pattern variants inside a
+    `data-klar-ds-elements="Sections"` container. These are extracted and dropped into
+    real pages directly, so:
+    - **Each direct child is one self-contained root section**, extractable on its own —
+      and is a **single** section: **never nest a `<section>` inside a section.**
+    - They hold **real sample content only** — never demo, placeholder-explanatory, or
+      "this shows how X works" text about the design system itself.
+    - Cover the page patterns the source uses — header, hero, **a text-content /
+      article-body (prose) section**, post/content grid, CTA, contact, footer, etc.
+      **Always include a text-content section sample.**
 - A small theme-toggle script wiring `[aria-label="Toggle theme"]` to toggle `.dark`.
 - Mobile-responsive and accessible (labels, `aria-*`, focus states, alt text).
 
@@ -223,13 +229,15 @@ close to this skeleton:
         … Badges, Tags, Forms (.ds-specimens--grid), Cards, … …
       </section>
 
-      <!-- SECTIONS — full page patterns; each DIRECT CHILD is a self-contained
-           root section (extractable on its own) -->
+      <!-- SECTIONS — template-ready page patterns. Each DIRECT CHILD is ONE
+           self-contained root section (extractable on its own); never nest a
+           <section> inside a section, and use real content (no demo text). -->
       <section class="ds-block" id="sections">
         <div class="ds-specimens ds-specimens--stack ds-sections"
              data-klar-ds-elements="Sections">
           <header class="site-header">…</header>
           <section>…hero…</section>
+          <section>…text content / article body (prose)…</section>
           <section>…content/post grid…</section>
           <section>…CTA…</section>
           <section>…contact…</section>
